@@ -1,3 +1,16 @@
+.apparels-main-container{
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 .shop-btn button{
     all: unset;
     padding: 15px 40px;
@@ -35,7 +48,6 @@
 .apparels-main {
     width: 80%;
     display: flex;
-    margin-top: 50px;
 }
 .leftside{
     display: flex;
