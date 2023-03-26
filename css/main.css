@@ -74,13 +74,17 @@
 
 .product-main-header {
     font-size: 60px;
+    cursor:default;
 }
 
 .product-main-shop-btn{
     margin-top: 30px;
 }
+.product-photo:hover .product-photo-img {
+    translate: -20px -10px;
+}
 
 .product-photo-img {
     width: 500px;
+    transition: translate 500ms;
 }
-

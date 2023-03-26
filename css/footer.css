@@ -13,7 +13,8 @@
     margin-left: 10px;
 }
 .footer-links{
-    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
 }
 .footer-main {
     width: 100%;
