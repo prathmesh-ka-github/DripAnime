@@ -75,6 +75,23 @@
 .product-main-header {
     font-size: 60px;
     cursor:default;
+    position: relative;
+}
+.product-main-header::after{
+    margin-left: 50px;
+    background-color: #4a4d50;
+    width: 70%;
+    align-self: center;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transition: transform 1000ms;
+    transform: scaleX(0);
+}
+.product-main-description:hover .product-main-header::after {
+    transform: scaleX(1);
 }
 
 .product-main-shop-btn{
