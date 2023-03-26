@@ -91,6 +91,7 @@
     top: 80px;
     background-color: white;
     z-index: 2;
+    display: none;
 }
 .hamlink{
     display: flex;
@@ -138,5 +139,7 @@ img#account {
     .ham {
         display: flex;
     }
-
+    .ham-contents {
+        display: flex;
+    }
 }
