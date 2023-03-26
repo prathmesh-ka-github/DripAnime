@@ -103,11 +103,7 @@
 .ham {
     display: none;
 }
-.active {
-    max-height: 500px;
-    border-bottom: solid 1px #ccc;
-    padding-bottom: 10px;
-}
+
 .more {
     width: 100%;
     display: flex;
@@ -141,5 +137,14 @@ img#account {
     }
     .ham-contents {
         display: flex;
+        padding-top: 0px;
     }
+}
+
+.active {
+    max-height: 500px;
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
 }
