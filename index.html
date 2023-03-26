@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,22 @@
 
     <link rel="shortcut icon" href="Assets/favicon.png" type="image/x-icon">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
 </head>
+
 <body>
+    <div class="ribbon">
+        <div class="ribbon-txt">
+            Free shipping available on all prepaid orders more than RS 499/-
+        </div>
+    </div>
     <div class="navbar-container">
         <div class="logo">
             <a href="index.html">
@@ -34,6 +46,128 @@
             </div>
         </div>
     </div>
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <!-- <img src="Assets/demon slayer2.jpg" class="d-block" style="width:100%"> -->
+                <div class="cara-wrap d-block">
+                    <div class="cara-container">
+                        <div class="description-container">
+                            <div class="desc-header">
+                                Demon Slayer
+                            </div>
+                            <div class="desc-info">
+                                Buy Oversized T-shirts, Hoodies, Jackets and more!!
+                            </div>
+                            <div class="cara-btn">
+                                <div class="shop-btn">
+                                    <button>Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo">
+                            <img class="photo-img" src="Assets/demon slayer2.jpg" alt="Demon slayer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <!-- <img src="Assets/One piece.jpg" class="d-block" style="width:100%"> -->
+                <div class="cara-wrap d-block">
+                    <div class="cara-container">
+                        <div class="description-container">
+                            <div class="desc-header">
+                                One Piece
+                            </div>
+                            <div class="desc-info">
+                                Buy Oversized T-shirts, Hoodies, Jackets and more!!
+                            </div>
+                            <div class="cara-btn">
+                                <div class="shop-btn">
+                                    <button>Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo">
+                            <img class="photo-img" src="Assets/One piece.jpg" alt="One Piece">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- <img src="Assets/jujutsukaisen2.jpg" class="d-block" style="width:100%"> -->
+                <div class="cara-wrap d-block">
+                    <div class="cara-container">
+                        <div class="description-container">
+                            <div class="desc-header">
+                                Jujutsu Kaisen
+                            </div>
+                            <div class="desc-info">
+                                Buy Oversized T-shirts, Hoodies, Jackets and more!!
+                            </div>
+                            <div class="cara-btn">
+                                <div class="shop-btn">
+                                    <button>Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo">
+                            <img class="photo-img" src="Assets/jujutsukaisen2.jpg" alt="jujutsukaisen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <!-- <img src="Assets/goku2.jpg" alt="" class="d-block"  style="width:100%"> -->
+                <div class="cara-wrap d-block">
+                    <div class="cara-container">
+                        <div class="description-container">
+                            <div class="desc-header">
+                                Dragon Ball
+                            </div>
+                            <div class="desc-info">
+                                Buy Oversized T-shirts, Hoodies, Jackets and more!!
+                            </div>
+                            <div class="cara-btn">
+                                <div class="shop-btn">
+                                    <button>Shop now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo">
+                            <img class="photo-img" src="Assets/goku2.jpg" alt="Dragon ball">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="main">
+
+    </div>
 </body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>

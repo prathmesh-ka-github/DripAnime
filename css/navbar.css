@@ -1,0 +1,62 @@
+
+.ribbon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    height: 40px;
+    background-color: #0096C7;
+}
+.ribbon-txt{
+    font-size: 20px;
+    color: white;
+    font-weight: 200;
+}
+
+.navbar-container {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: #F0F0F0;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+.logo{
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+.logo-pic {
+    width: 60px;
+}
+
+.links-container {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.link {
+    border-bottom: 3px transparent solid;
+    transition: border 300ms;
+}
+
+.link:hover {
+    cursor: pointer;
+    border-bottom: 3px #0096C7 solid;
+}
+
+.rightnav {
+    display: flex;
+    align-items: center;
+    width: 8%;
+    justify-content: space-around;
+}
+.rightnav div img {
+    width: 40px;
+}
