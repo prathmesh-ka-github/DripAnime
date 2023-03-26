@@ -72,9 +72,7 @@
 }
 
 
-
 /* Products on main page */
-
 .product-main-container {
     width: 100%;
     height: 700px;
@@ -122,4 +120,40 @@
 .product-photo-img {
     width: 500px;
     transition: translate 500ms;
+}
+
+@media only screen and (max-width:600px){
+
+    .carousel-inner {
+        height: 60vh;
+    }
+    .cara-container {
+        flex-direction: column;
+        height: 60vh;
+    }
+
+    .description-container {
+        margin: 0;
+    }
+    .desc-header {
+        font-size: 50px;
+    }
+    .desc-info{
+        font-size: 15px;
+    }
+    .cara-btn {
+        margin-top: 10px;
+    }
+    .shop-btn button{
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+    .photo {
+        margin: 0;
+        margin-top: 20px;
+    }
+    .photo-img {
+        width: 100vw;
+        height: 250px;
+    }
 }

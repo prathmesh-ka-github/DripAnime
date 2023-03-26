@@ -32,18 +32,28 @@
 .logo-pic {
     width: 60px;
 }
+.links-container-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
 
 .links-container {
     display: flex;
     font-size: 30px;
     align-items: center;
     width: 40%;
-    justify-content: space-around;
+    justify-content: center;
+    position: absolute;
+    height: 80px;
+    z-index: 0;
 }
 
 .link {
     border-bottom: 3px transparent solid;
-    transition: border 300ms;
+    transition: border-color 300ms;
+    margin: 0px 40px;
 }
 
 .link:hover {
@@ -53,13 +63,59 @@
 .nav-active {
     border-bottom: 3px #0096C7 solid;
     cursor: default;
+    margin: 0px 40px;
 }
+
 .rightnav {
     display: flex;
     align-items: center;
-    width: 8%;
+    width: 15%;
     justify-content: space-around;
+    margin-right: 10px;
 }
 .rightnav div img {
     width: 40px;
+    cursor: pointer;
+}
+.ham-contents {
+    /* max-height: 0; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all 600ms;
+    max-height: 0;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 80px;
+    background-color: white;
+    z-index: 2;
+}
+.hamlink{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.ham {
+    display: none;
+}
+.active {
+    max-height: 500px;
+}
+@media only screen and (max-width:900px){
+    .ribbon-txt {
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .links-container {
+        display: none;
+    }
+    .rightlink {
+        display: none;
+    }
+    .ham {
+        display: flex;
+    }
 }
