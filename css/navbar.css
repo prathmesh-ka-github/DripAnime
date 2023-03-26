@@ -83,9 +83,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    transition: all 600ms;
+    transition: all 900ms;
     max-height: 0;
     margin-bottom: 20px;
+    padding-top: 20px;
     position: sticky;
     top: 80px;
     background-color: white;
@@ -95,7 +96,7 @@
     display: flex;
     width: 100%;
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 30px;
     font-size: 20px;
 }
 .ham {
@@ -103,6 +104,25 @@
 }
 .active {
     max-height: 500px;
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 10px;
+}
+.more {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    align-items: center;
+}
+.more img{
+    width: 30px;
+    height: 30px;
+    margin: 0px 3vw;
+}
+img#account {
+    width: 40px;
+    height: auto;
+    margin-left: 2vw;
 }
 @media only screen and (max-width:900px){
     .ribbon-txt {
@@ -118,4 +138,5 @@
     .ham {
         display: flex;
     }
+
 }

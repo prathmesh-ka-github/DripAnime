@@ -102,3 +102,27 @@
 .product-container:hover .shop-btn{
     left: 60px;
 }
+@media only screen and (max-width:900px){
+    .apparels-main {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .rightside {
+        padding: 0;
+    }
+    .product-name{
+        right: 0;
+        bottom: -100px;
+    }
+    .product-img {
+        width: 90vw;
+    }
+    .heading {
+        padding: 20px 40px;
+        font-size: 40px;
+    }
+    #product-name-exception{
+        bottom: -100px;
+        left: 0;
+    }
+}

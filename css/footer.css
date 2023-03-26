@@ -33,3 +33,18 @@
     color: #000000;
     font-size: 20px;
 }
+@media only screen and (max-width:600px){
+    .footer-logo-img {
+        width: 150px;
+    }
+    .footer-links-container {
+        margin-left: 0px;
+    }
+    .footer img{
+        width: 10px;
+    }
+    .footer-copyright {
+        font-size: 15px;
+        text-align: center;
+    }
+}
