@@ -1,0 +1,92 @@
+.shop-btn button{
+    all: unset;
+    padding: 15px 40px;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    border-radius: 10px;
+    background-color: #0096C7;
+    transition: background-color 400ms;
+    cursor: pointer;
+}
+.shop-btn button:hover {
+    background-color: #5dadc8;
+}
+.shop-btn button:active {
+    background-color: rgb(86, 142, 161);
+}
+.heading-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.heading {
+    font-size: 60px;
+    padding: 20px 100px;
+    background-color: #F0F0F0;
+    cursor: default;
+}
+.apparels-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.apparels-main {
+    width: 80%;
+    display: flex;
+    margin-top: 50px;
+}
+.leftside{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.rightside {
+    padding-top: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.product-container{
+    margin: 100px 0px;
+    position: relative;
+}
+.product-name{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: -20px;
+    bottom: 20px;
+    transition: all 700ms;
+}
+.name {
+    font-size: 50px;
+    padding: 20px 50px ;
+    text-align: center;
+    background-color: rgba(109, 109, 109, 0.537);
+    color: white;
+}
+.shop-btn {
+    margin-top: 20px;
+    left: 20px;
+    position: relative;
+    transition: all 700ms;
+}
+#product-name-exception {
+    left: -80px;
+    bottom: -20px;
+}
+.product-container:hover .product-name{
+    left: -30px;
+}
+.product-container:hover #product-name-exception{
+    left: -100px;
+}
+.product-container:hover .shop-btn{
+    left: 60px;
+}

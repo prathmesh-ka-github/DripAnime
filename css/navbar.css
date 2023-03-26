@@ -50,7 +50,10 @@
     cursor: pointer;
     border-bottom: 3px #0096C7 solid;
 }
-
+.nav-active {
+    border-bottom: 3px #0096C7 solid;
+    cursor: default;
+}
 .rightnav {
     display: flex;
     align-items: center;
