@@ -1,0 +1,34 @@
+.footer-container {
+    width: 100%;
+    height: 350px;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+}
+.footer-links-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+.footer-links{
+    padding: 10px;
+}
+.footer-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-logo-img {
+    width: 200px;
+}
+.footer-logo {
+    margin-bottom: 20px;
+}
+.footer-copyright{
+    color: #000000;
+    font-size: 20px;
+}
