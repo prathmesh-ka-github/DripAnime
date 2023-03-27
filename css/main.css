@@ -47,10 +47,10 @@
     width: 5%;
 }
 .carousel-control-next:hover{
-    background: linear-gradient(90deg, #848484 10%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(-90deg, #a8a8a8 0%, rgba(255, 255, 255, 0) 90%);
 }
 .carousel-control-prev:hover{
-    background: linear-gradient(90deg, #848484 10%, rgb(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg, #a8a8a8 0%, rgb(255, 255, 255, 0) 90%);
 }
 
 .description-container {
