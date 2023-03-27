@@ -25,6 +25,15 @@
     justify-content: center;
     align-items: center;
 }
+.active {
+    padding: 0;
+}
+.carousel-indicators [data-bs-target]{
+    background-color: black;
+} 
+.carousel-indicators {
+    margin-bottom: 0.5rem;
+}
 
 .description-container {
     display: flex;
@@ -180,4 +189,7 @@
     .column-rev {
         flex-direction: column;
     }
+    .carousel-indicators{
+        bottom: -40px;
+    } 
 } 
