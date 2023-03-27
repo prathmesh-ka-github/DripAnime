@@ -33,7 +33,12 @@
 } 
 .carousel-indicators {
     margin-bottom: 0.5rem;
-    
+}
+.carousel-control-next {
+    width: 10%;
+}
+.carousel-control-prev {
+    width: 10%;
 }
 
 .description-container {
