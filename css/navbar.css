@@ -50,11 +50,13 @@
     height: 80px;
     z-index: 0;
 }
+.links-container a{
+    margin: 0px 40px;
+}
 
 .link {
     border-bottom: 3px transparent solid;
     transition: border-color 300ms;
-    margin: 0px 40px;
 }
 
 .link:hover {
