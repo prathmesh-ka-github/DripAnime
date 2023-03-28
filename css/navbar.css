@@ -10,7 +10,7 @@
 .ribbon-txt{
     font-size: 20px;
     color: white;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .navbar-container {
@@ -28,6 +28,7 @@
     margin-left: 40px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .logo-pic {
     width: 60px;

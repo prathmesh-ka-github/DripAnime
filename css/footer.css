@@ -28,10 +28,12 @@
 }
 .footer-logo {
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .footer-copyright{
     color: #000000;
     font-size: 20px;
+    cursor: default;
 }
 @media only screen and (max-width:600px){
     .footer-logo-img {
