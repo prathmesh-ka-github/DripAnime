@@ -36,3 +36,21 @@ form {
     border-radius: 0px 10px 10px 0px;
     background-color: #60b9d7;
 }
+
+.plate {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.name {
+    font-size: 30px;
+}
+.tags {
+    font-size: 20px;
+}
+.hide {
+    display: none;
+}
