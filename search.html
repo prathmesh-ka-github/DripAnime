@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DripAnime - Apparels</title>
+    <title>DripAnime - Search</title>
 
     <link rel="shortcut icon" href="Assets/favicon.png" type="image/x-icon">
 
@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/apparels.css">
+    <link rel="stylesheet" href="css/search.css">
 
-    <!-- Aos styles -->
-    <link rel="stylesheet" href="aos.css">
 </head>
 <body>
     <div class="ribbon">
@@ -34,7 +32,9 @@
         </div>
         <div class="links-container-wrap">
             <div class="links-container">
-                    <div class="nav-active">Apparels</div>
+                <a href="apparels.html">
+                    <div class="link">Apparels</div>
+                </a>
                 <a href="anime.html">
                     <div class="link">Anime</div>
                 </a>
@@ -44,10 +44,8 @@
             </div>
         </div>
         <div class="rightnav">
-            <div class="rightlink">
-                <a href="search.html">
-                    <img src="Assets/icons8-search-60.png" alt="">
-                </a>
+            <div class="rightlink nav-active">
+                <img src="Assets/icons8-search-60.png" alt="search bar">
             </div>
             <div class="rightlink">
                 <img src="Assets/cart.png" alt="shopping cart">
@@ -61,17 +59,17 @@
         </div>
     </div>
     <div class="ham-contents" id="ham-contents">
-        <div class="hamlink nav-active">Apparels</div>
+        <div class="hamlink">
+            <a href="apparels.html">
+                Apparels
+            </a>
+        </div>
         <div class="hamlink">
             <a href="anime.html">
                 Anime
             </a>
         </div>
-        <div class="hamlink">
-            <a href="support.html">
-                Support
-            </a>
-        </div>
+        <div class="hamlink nav-active">Support</div>
         <div class="more-container hamlink">
             <div class="more ">
                 <img id="cart" src="Assets/cart.png" alt="">
@@ -80,75 +78,31 @@
             </div>
         </div>
     </div>
-    <div class="apparels-main-container">
-        <div class="heading-container">
-            <div class="heading">
-                Apparels
-            </div>
-        </div>
-        <div class="apparels-main">
-            <div class="leftside">
-                <div class="product-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
-                    <div class="product">
-                        <img class="product-img" src="Assets/gojo-tshirt.png" alt="">
-                    </div>
-                    <div class="product-name">
-                        <div class="name">T-Shirts</div>
-                        <div class="shop-btn">
-                            <button>Shop now</button>
-                        </div>
-                    </div>
+    <div class="search-main-container">
+        <div class="searchbar-container">
+            <h1>Search Products</h1>
+            <form action="">
+                <input placeholder="for eg. 'Hoodies', 'Itachi', 'Zoro'" type="text">
+                <div class="search-btn">
+                    <img src="Assets/icons8-search-50-light.png" alt="">
                 </div>
-                <div class="product-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
-                    <div class="product">
-                        <img class="product-img" src="Assets/luffy_prev_ui.png" alt="">
-                    </div>
-                    <div class="product-name" id="product-name-exception">
-                        <div class="name">Oversized</div>
-                        <div class="shop-btn">
-                            <button>Shop now</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
-                    <div class="product">
-                        <img class="product-img" src="Assets/survey-corps-f-tshirt-model.png" alt="">
-                    </div>
-                    <div class="product-name" id="product-name-exception">
-                        <div class="name">Fullsleeves</div>
-                        <div class="shop-btn">
-                            <button>Shop now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="rightside">
-                <div class="product-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
-                    <div class="product">
-                        <img class="product-img" src="Assets/eren-hoodie.png" alt="">
-                    </div>
-                    <div class="product-name">
-                        <div class="name">Hoodies</div>
-                        <div class="shop-btn">
-                            <button>Shop now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1200">
-                    <div class="product">
-                        <img class="product-img" src="Assets/kamehameha.png" alt="">
-                    </div>
-                    <div class="product-name">
-                        <div class="name">Jackets</div>
-                        <div class="shop-btn">
-                            <button>Shop now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
+
+
+    <template data-user-template>
+        <div class="plate">
+            <div class="headingofplate">
+    
+            </div>
+            <div class="mailofplate">
+    
+            </div>
+        </div>
+    </template>
+
+    
     <div class="footer-container">
         <div class="footer-links-container">
             <div class="footer-links">
@@ -192,13 +146,4 @@
     </div>
 </body>
 <script src="script.js"></script>
-
-<!-- J-Query -->
-<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-
-<!-- Aos JS -->
-<script src="aos.js"></script>
-
-<script type="text/javascript">AOS.init();</script>
-
 </html>

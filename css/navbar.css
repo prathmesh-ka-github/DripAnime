@@ -63,11 +63,7 @@
     cursor: pointer;
     border-bottom: 3px #0096C7 solid;
 }
-.nav-active {
-    border-bottom: 3px #0096C7 solid;
-    cursor: default;
-    margin: 0px 40px;
-}
+
 
 .rightnav {
     display: flex;
@@ -76,9 +72,28 @@
     justify-content: space-around;
     margin-right: 10px;
 }
-.rightnav div img {
+.rightlink{
+    margin: 0;
+    border-bottom: 3px transparent solid;
+    transition: border-color 300ms;
+
+}
+.rightlink img {
     width: 40px;
+    height: auto;
     cursor: pointer;
+    margin: 10px;
+}
+.rightlink:hover{
+    border-bottom: 3px #0096C7 solid;
+}
+.nav-active {
+    border-bottom: 3px #0096C7 solid;
+    cursor: default;
+    margin: 0px 40px;
+}
+.rightlink{
+    margin: 0;
 }
 .ham-contents {
     /* max-height: 0; */

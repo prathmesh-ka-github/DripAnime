@@ -8,4 +8,4 @@ ham.addEventListener('click', function () {
 
 fetch('./tshirt.json')
     .then((response) => response.json())
-    .then((data) => console.log(data.hoodie[0].id));
+    .then((data) => console.log(data.hoodie[0]));
