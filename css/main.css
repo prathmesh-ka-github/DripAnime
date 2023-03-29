@@ -47,10 +47,10 @@
     width: 5%;
 }
 .carousel-control-next:hover{
-    background: linear-gradient(-90deg, #3c3c3c 0%, rgba(255, 255, 255, 0) 90%);
+    background: linear-gradient(-90deg, #aaaaaa 0%, rgba(255, 255, 255, 0) 90%);
 }
 .carousel-control-prev:hover{
-    background: linear-gradient(90deg, #3c3c3c 0%, rgb(255, 255, 255, 0) 90%);
+    background: linear-gradient(90deg, #aaaaaa 0%, rgb(255, 255, 255, 0) 90%);
 }
 
 .description-container {
@@ -61,7 +61,6 @@
     width: 100%;
     align-items: center;
     justify-content:center;
-    /* margin-bottom: 200px;*/
     padding-left: 10px; 
 }
 .desc-header {

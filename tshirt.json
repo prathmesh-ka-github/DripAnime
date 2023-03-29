@@ -1,0 +1,34 @@
+{
+    "tshirt":[
+        {
+            "name":"Itachi tshirt",
+            "id":"21241",
+            "sizes":"XS,M,L,XL",
+            "tags":"Itachi, Itachi Uchiha, Naruto,Naruto merch, Tshirts, T-shirt",
+            "colors":"Black,White,Navy blue"
+        },
+        {
+            "name":"Sasuke Tshirt",
+            "id":"21242",
+            "sizes":"XS,M,L,XL",
+            "tags":"Sasuke, Sasuke Uchiha, Naruto,Naruto merch, Tshirts, T-shirt",
+            "colors":"Black,White,Navy blue"
+        }
+    ],
+    "hoodie":[
+        {
+            "name":"Itachi hoodie",
+            "id":"41241",
+            "sizes":"XS,M,L,XL",
+            "tags":"Itachi, Itachi Uchiha, Naruto,Naruto merch, hoodies",
+            "colors":"Black,White,Navy blue"
+        },
+        {
+            "name":"Sasuke hoodie",
+            "id":"41242",
+            "sizes":"XS,M,L,XL",
+            "tags":"Sasuke, Sasuke Uchiha, Naruto,Naruto merch, hoodies",
+            "colors":"Black,White,Navy blue"
+        }
+    ]
+}
