@@ -24,7 +24,7 @@ searchInput.addEventListener("input", (e) => {
     })
 })
 
-fetch('./tshirt.json')
+fetch('./products/data/tshirt.json')
     .then((response) => response.json())
     .then(data => {
         users = data.tshirt.map(product => {
@@ -39,7 +39,7 @@ fetch('./tshirt.json')
         });
     });
 
-fetch('./tshirt.json')
+fetch('./products/data/tshirt.json')
     .then((hresponse) => hresponse.json())
     .then(hdata => {
         husers = hdata.hoodie.map(hoodie => {
