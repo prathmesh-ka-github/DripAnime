@@ -1,29 +1,36 @@
+// For Mobile Hamburger menu
 const ham = document.getElementById('ham');
 const hamcontents = document.getElementById('ham-contents');
 ham.addEventListener('click', function () {
     console.log('clicked!')
     hamcontents.classList.toggle('active')
 })
+
+
+// For search-bar
 const userCardTemplate = document.querySelector("[data-user-template]")
 const searchResult = document.querySelector("[search-results]")
 const searchInput = document.querySelector("[data-search]")
 
 let users = []
+let husers = []
 
+//! Searching and displaying the search results
 searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase()
+    // for tshirts
     users.forEach(user => {
         const isVisible = user.name.toLowerCase().includes(value) || user.tags.toLowerCase().includes(value)
         user.element.classList.toggle("hide",!isVisible)
-        // console.log(user.tags)
     })
+    // for hoodies
     husers.forEach(huser => {
         const isVisible = huser.hname.toLowerCase().includes(value) || huser.htags.toLowerCase().includes(value)
         huser.helement.classList.toggle("hide",!isVisible)
-        // console.log(huser.htags)
     })
 })
 
+//! Inserting items into DOM using tshirt.JSON file
 fetch('./products/data/tshirt.json')
     .then((response) => response.json())
     .then(data => {
