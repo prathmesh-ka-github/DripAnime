@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/preloader.css">
 
     <!-- Aos styles -->
     <link rel="stylesheet" href="aos.css">
@@ -285,7 +286,8 @@
             </div>
         </div>
     </div>
-
+    
+    <!-- Footer container -->
     <div class="footer-container">
         <div class="footer-links-container">
             <div class="footer-links">
@@ -327,7 +329,60 @@
             <div class="footer-copyright">Copyright © 2023 - All right reserved by DripAnime.io on GitHub Pages.</div>
         </div>
     </div>
+
+    <!-- Preloader container -->
+    <div class="loader-container-main">
+        <div class="center">
+            <div class="center-cell">
+              <div class="prealoder_container">
+                
+          <div class="trail">
+          
+          <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+             
+              <defs>
+                  <linearGradient x1="74.672154%" y1="0%" x2="14.4670759%" y2="79.3875558%" id="linearGradient-1">
+                      <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+                      <stop stop-color="#FFFFFF" offset="49.9932262%"></stop>
+                      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+                  </linearGradient>
+              </defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path d="M14,0 C14,7.7319865 7.7319865,14 0,14 L0,10 C5.5228475,10 10,5.5228475 10,0 L14,0 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+              </g>
+          </svg>
+          </div>      
+                
+                <div class="ball_container_1">
+                  <div class="ball"></div>
+                </div>
+                <div class="ball_container_2">
+                  <div class="ball"></div>
+                </div>
+                <div class="ball_container_3">
+                  <div class="ball"></div>
+                </div>
+                <div class="ball_container_4">
+                  <div class="ball"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
 </body>
+
+<script>
+    const loader = document.querySelector(".loader-container-main")
+    window.addEventListener("load",function(){
+        setTimeout(() => {
+            loader.style.opacity = "0"
+        }, 1000);
+        setTimeout(() => {
+            loader.style.display = "none"
+        }, 1500);
+    })
+</script>
+
 <script src="script.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -337,7 +392,6 @@
 
 <!-- Aos JS -->
 <script src="aos.js"></script>
-
 <script type="text/javascript">AOS.init();</script>
 
 </html>
