@@ -27,10 +27,11 @@ searchInput.addEventListener("input", (e) => {
 })
 
 //! Inserting items into DOM using tshirt.JSON file
+// for tshirts
 fetch('./products/data/tshirt.json')
-    .then((response) => response.json())
-    .then(data => {
-        users = data.tshirt.map(product => {
+.then((response) => response.json())
+.then(data => {
+    users = data.tshirt.map(product => {
             const card = userCardTemplate.content.cloneNode(true).children[0]
             // console.log(product)
             const header = card.querySelector('[data-name]')
@@ -41,7 +42,8 @@ fetch('./products/data/tshirt.json')
             return{name:product.name, tags:product.tags, element:card}
         });
     });
-
+    
+    // for hoodies
 fetch('./products/data/tshirt.json')
     .then((hresponse) => hresponse.json())
     .then(hdata => {
