@@ -161,11 +161,11 @@
 @media only screen and (max-width:900px){
     /* carousel */
     .carousel-inner {
-        height: 100vw;
+        height: 120vw;
     }
     .cara-container {
         flex-direction: column;
-        height: 100vw;
+        height: 120vw;
         margin: 0;
     }
 

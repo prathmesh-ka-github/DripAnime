@@ -1,5 +1,5 @@
 .loader-container-main {
-    background: #fff;
+    background: #ffffff;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -15,7 +15,7 @@
 .center-cell {
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 49%;
     transform: translate(-50%, -50%);
     transform: scale(2.5);
 }
@@ -120,5 +120,12 @@
     38% {
         transform: rotate(90deg);
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width:900px){
+
+    .center-cell {
+        left: 48%;
     }
 }
