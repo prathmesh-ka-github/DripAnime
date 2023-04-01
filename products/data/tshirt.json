@@ -1,32 +1,52 @@
 {
     "tshirt":[
         {
-            "name":"Itachi tshirt",
+            "name":"Itachi Mangekyo tshirt",
             "id":"21241",
             "sizes":"XS,M,L,XL",
             "tags":"Itachi, Itachi Uchiha, Naruto,Naruto merch, Tshirts",
-            "colors":"Black,White,Navy blue"
+            "colors":"Black,White,Navy blue",
+            "url":"Itachi-tshirt"
+        },
+        {
+            "name":"Luffy Gear 5 tshirt",
+            "id":"21242",
+            "sizes":"XS,M,L,XL",
+            "tags":"Luffy, Luffy Uchiha , One piece , One piece merch , Tshirts",
+            "colors":"Black,White,Navy blue",
+            "url":"Luffy-tshirt"
+        },
+        {
+            "name":"Sasuke Susanoo Tshirt",
+            "id":"21244",
+            "sizes":"XS,M,L,XL",
+            "tags":"Sasuke , Sasuke Uchiha , Naruto , Naruto merch , Tshirts",
+            "colors":"Black,White,Navy blue",
+            "url":"Sasuke-tshirt"
+        },
+        {
+            "name":"Zoro Tshirt",
+            "id":"21245",
+            "sizes":"XS,M,L,XL",
+            "tags":"Zoro , Zoro Roronoa , One piece ,One piece merch , Tshirts",
+            "colors":"Black,White,Navy blue",
+            "url":"Zoro-tshirt"
         },
         {
             "name":"Tanjiro tshirt",
-            "id":"21241",
+            "id":"21243",
             "sizes":"XS,M,L,XL",
             "tags":"Tanjiro, Tanjiro Kamado, Demon slayer, Demon slayer merch, Tshirts",
-            "colors":"Black,White,Navy blue"
+            "colors":"Black,White,Navy blue",
+            "url":"Tanjiro-tshirt"
         },
         {
-            "name":"Sasuke Tshirt",
-            "id":"21242",
+            "name":"Karasuno Team Tshirt",
+            "id":"21246",
             "sizes":"XS,M,L,XL",
-            "tags":"Sasuke, Sasuke Uchiha, Naruto,Naruto merch, Tshirts",
-            "colors":"Black,White,Navy blue"
-        },
-        {
-            "name":"Naruto Tshirt",
-            "id":"21242",
-            "sizes":"XS,M,L,XL",
-            "tags":"Naruto, Naruto Uzumaki, Naruto,Naruto merch, Tshirts",
-            "colors":"Black,White,Navy blue"
+            "tags":"Hinata Shouyo , Kageyama Tobio , Karasuno , Haikyuu merch , Tshirts",
+            "colors":"Black,White,Navy blue",
+            "url":"Karasuno-tshirt"
         }
     ],
     "hoodie":[

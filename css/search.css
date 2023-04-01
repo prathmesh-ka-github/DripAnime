@@ -36,9 +36,13 @@ form {
     border-radius: 0px 10px 10px 0px;
     background-color: #60b9d7;
 }
-
+.search-results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .plate {
-    width: 100%;
+    width: 600px;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -48,8 +52,9 @@ form {
 .name {
     font-size: 30px;
 }
-.tags {
-    font-size: 20px;
+.product-image img{
+    width: 400px;
+    border-radius: 20px;
 }
 .hide {
     display: none;
