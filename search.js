@@ -24,7 +24,7 @@ searchInput.addEventListener("input", (e) => {
     }
     else if(value == ""){
         users.forEach(user => {
-            user.element.classList.toggle("hide")
+            user.element.classList.add("hide")
         })
         // document.querySelector("[search-results]").classList.toggle("hide")
     }
