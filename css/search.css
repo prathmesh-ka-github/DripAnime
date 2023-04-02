@@ -55,7 +55,51 @@ form {
 .product-image img{
     width: 400px;
     border-radius: 20px;
+    transition: translate 500ms;
+}
+.plate:hover .product-image img{
+    translate: -20px -10px;
 }
 .hide {
     display: none;
+}
+@media only screen and (max-width:900px){
+    .searchbar-container{
+        padding: 20px;
+    }
+    .searchbar-container h1{
+        font-weight: 400;
+        font-size: 40px;
+    }
+    .searchbar-container input{
+        height: 10px;
+        width: 60vw;
+        font-size: 17px;
+    }
+    form {
+        margin-top: 10px;
+    }
+    .search-btn{
+        height: 50px;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .searchbar-container img{
+        width: 20px;
+        height: auto;
+        padding: 0;
+    }
+    .name {
+        font-size: 25px;
+    }
+    .plate {
+        padding: 20px;
+        width: 380px;
+    }
+    .product-image img{
+        width: 320px;
+        border-radius: 20px;
+    }
 }
