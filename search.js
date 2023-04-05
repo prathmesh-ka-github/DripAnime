@@ -1,7 +1,8 @@
 /*
-    This is the beta testing stage for now with dummy text.
-    TODO Add img urls and make working cards of products.
-    TODO Now adding products
+    ? This is the beta testing stage for now, with dummy text.
+    //TODO Add img urls and make working cards of products.
+    //TODO Now adding products
+    TODO  
 */
 // For search-bar
 const userCardTemplate = document.querySelector("[data-user-template]")
@@ -14,7 +15,7 @@ let users = []
 //! Searching and displaying the search results
 searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase()
-    // for tshirts
+    // For tshirts
     if (value !== "") {
         users.forEach(user => {
             const isVisible = user.name.toLowerCase().includes(value) || user.tags.toLowerCase().includes(value)
