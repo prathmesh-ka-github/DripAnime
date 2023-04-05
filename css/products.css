@@ -33,7 +33,7 @@
     transition: translate 500ms;
 }
 .plate:hover .product-image img{
-    translate: -20px -10px;
+    translate: -20px -20px;
 }
 
 @media only screen and (max-width:900px){
