@@ -8,7 +8,7 @@ let users = []
 fetch('./products/data/products.json')
 .then((response) => response.json())
 .then(data => {
-    users = data.tshirt.map(product => {
+    users = data.hoodie.map(product => {
         const card = userCardTemplate.content.cloneNode(true).children[0]
         const productImage = card.querySelector("[product-image]")
         const header = card.querySelector('[data-name]')

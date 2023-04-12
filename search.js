@@ -31,9 +31,9 @@ searchInput.addEventListener("input", (e) => {
     }
 })
 
-//! Inserting items into DOM using tshirt.JSON file
+//! Inserting items into DOM using products.JSON file
 // for tshirts
-fetch('./products/data/tshirt.json')
+fetch('./products/data/products.json')
 .then((response) => response.json())
 .then(data => {
     users = data.tshirt.map(product => {

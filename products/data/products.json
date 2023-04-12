@@ -2,7 +2,7 @@
     "tshirt":[
         {
             "name":"Itachi Mangekyo tshirt",
-            "id":"21241",
+            "id":"01-001",
             "sizes":"XS,M,L,XL",
             "tags":"Itachi, Itachi Uchiha, Naruto,Naruto merch, Tshirts",
             "colors":"Black,White,Navy blue",
@@ -10,7 +10,7 @@
         },
         {
             "name":"Luffy Gear 5 tshirt",
-            "id":"21242",
+            "id":"01-002",
             "sizes":"XS,M,L,XL",
             "tags":"Luffy, Luffy Uchiha , One piece , One piece merch , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -18,7 +18,7 @@
         },
         {
             "name":"Sasuke Susanoo Tshirt",
-            "id":"21244",
+            "id":"01-003",
             "sizes":"XS,M,L,XL",
             "tags":"Sasuke , Sasuke Uchiha , Naruto , Naruto merch , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -26,7 +26,7 @@
         },
         {
             "name":"Gojo tshirt",
-            "id":"21247",
+            "id":"01-004",
             "sizes":"XS,M,L,XL",
             "tags":"Gojo, Gojo Sataru, Jujutsu Kaise Merch , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -34,7 +34,7 @@
         },
         {
             "name":"Zoro Tshirt",
-            "id":"21245",
+            "id":"01-005",
             "sizes":"XS,M,L,XL",
             "tags":"Zoro , Zoro Roronoa , One piece ,One piece merch , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -42,7 +42,7 @@
         },
         {
             "name":"Tanjiro tshirt",
-            "id":"21243",
+            "id":"01-006",
             "sizes":"XS,M,L,XL",
             "tags":"Tanjiro, Tanjiro Kamado, Demon slayer, Demon slayer merch, Tshirts",
             "colors":"Black,White,Navy blue",
@@ -50,7 +50,7 @@
         },
         {
             "name":"Haikyuu tshirt",
-            "id":"21247",
+            "id":"01-007",
             "sizes":"XS,M,L,XL",
             "tags":"Haikyuu , Haikyuu Merch , Hinata Shoyo , Fly , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -58,7 +58,7 @@
         },
         {
             "name":"Levi Ackerman tshirt",
-            "id":"21247",
+            "id":"01-008",
             "sizes":"XS,M,L,XL",
             "tags":"Aot , Attack on titan Merch ,Levi Ackerman , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -66,7 +66,7 @@
         },
         {
             "name":"Gojo tshirt",
-            "id":"21247",
+            "id":"01-009",
             "sizes":"XS,M,L,XL",
             "tags":"Gojo, Gojo Sataru, Jujutsu Kaise Merch , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -74,7 +74,7 @@
         },
         {
             "name":"Power tshirt",
-            "id":"21247",
+            "id":"01-010",
             "sizes":"XS,M,L,XL",
             "tags":"Chainsaw Man , CSM Merch ,Power , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -82,7 +82,7 @@
         },
         {
             "name":"Karasuno Team Tshirt",
-            "id":"21246",
+            "id":"01-011",
             "sizes":"XS,M,L,XL",
             "tags":"Hinata Shouyo , Kageyama Tobio , Karasuno , Haikyuu merch , Tshirts",
             "colors":"Black,White,Navy blue",
@@ -91,25 +91,36 @@
     ],
     "hoodie":[
         {
-            "name":"Itachi hoodie",
-            "id":"41241",
+            "name":"Eren hoodie",
+            "id":"02-001",
             "sizes":"XS,M,L,XL",
-            "tags":"Itachi, Itachi Uchiha, Naruto,Naruto merch, hoodies",
-            "colors":"Black,White,Navy blue"
+            "tags":"Eren, Eren Yeager, Attack on titan merch, aot, hoodies",
+            "colors":"Black,White,Navy blue",
+            "url":"Eren-hoodie"
         },
         {
-            "name":"Sasuke hoodie",
-            "id":"41242",
+            "name":"Gojo hoodie",
+            "id":"02-002",
             "sizes":"XS,M,L,XL",
-            "tags":"Sasuke, Sasuke Uchiha, Naruto,Naruto merch, hoodies",
-            "colors":"Black,White,Navy blue"
+            "tags":"Gojo, Gojo Sataru, Jujutsu Kaise Merch , hoodies",
+            "colors":"Black,White,Navy blue",
+            "url":"Gojo-hoodie"
         },
         {
-            "name":"Naruto hoodie",
-            "id":"41243",
+            "name":"Levi hoodie",
+            "id":"02-003",
             "sizes":"XS,M,L,XL",
-            "tags":"Naruto, Naruto Uzumaki, Naruto,Naruto merch, hoodies",
-            "colors":"Black,White,Navy blue"
+            "tags":"Levi, Levi Ackerman,Attack on titan merch, aot, hoodies",
+            "colors":"Black,White,Navy blue",
+            "url":"Levi-hoodie"
+        },
+        {
+            "name":"Scouts hoodie",
+            "id":"02-004",
+            "sizes":"XS,M,L,XL",
+            "tags":"Scouts, Reacon core, Survey corps,Attack on titan merch, aot, hoodies",
+            "colors":"Black,White,Navy blue",
+            "url":"Scouts-hoodie"
         }
     ],
     "jackets":[
