@@ -4,35 +4,13 @@
     justify-content: center;
     align-items: center;
 }
-.register-main:hover .login-account::after{
-    transform: scaleY(1);
-}
 .register-container {
     display: flex;
+    justify-content: center;
     width: 80%;
     position: relative;
 }
-.cr-account {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.login-account::after{
-    background-color: #0096c7;
-    width: 3px;
-    height: 90%;
-    top: 0;
-    left: 50%;
-    content: "";
-    position: absolute;
-    transition: transform 1000ms;
-    transform: scaleY(0.8);
-}
-.login-account {
-    margin-left: 12px;
+.main-containers {
     height: 100%;
     width: 50%;
     display: flex;
@@ -60,12 +38,22 @@
     text-align: center;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
 }
+.change {
+    margin: 10px 0px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.change span {
+    color: #0096C7;
+}
+
 .register-form button{
     all: unset;
     padding: 10px 20px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 300;
     color: white;
     border-radius: 10px;
@@ -81,13 +69,16 @@
 }
 .register-chkbx{
     display: flex;
-    margin-top: 20px;
+    margin: 5px 0px;
 }
 .chkbk {
     padding: 20px;
 }
 label {
     font-size: 15px;
+}
+.gayab {
+    display: none;
 }
 
 /*!--------------------------------------------Custom checkbox------------------------------------------------ */

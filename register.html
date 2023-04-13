@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="css/register.css">
 
 </head>
+
 <body>
     <div class="ribbon">
         <div class="ribbon-txt">
@@ -80,15 +82,17 @@
             </div>
         </div>
     </div>
-    <div class="register-main main-containers">
-        <div class="register-container">
-            <div class="cr-account">
+    <div class="register-main">
+        <div class="register-container ">
+
+            <div class="cr-account main-containers" id="loginPg">
                 <div class="register-headers">
-                    Already a Customer?
+                    Already our Customer?
                 </div>
                 <div class="register-form">
                     <input type="text" placeholder="Email ID">
                     <input type="password" minlength="8" placeholder="Password (shushhh)">
+                    <div onclick="change()" id="cracc" class="change">New to DripAnime?? <span>Create new account.</span></div>
                     <div class="register-chkbx Ccontainer">
                         <label for="signedin-login">
                             <input class="chkbk checkbox" id="signedin-login" type="checkbox">
@@ -98,8 +102,8 @@
                     <button>Login</button>
                 </div>
             </div>
-            
-            <div class="login-account main-containers">
+
+            <div class="login-account main-containers gayab" id="createAccount">
                 <div class="register-headers">
                     New to DripAnime?
                 </div>
@@ -108,6 +112,7 @@
                     <input type="text" placeholder="Email ID">
                     <input type="number" minlength="10" placeholder="Phone number">
                     <input type="password" minlength="8" placeholder="Password (shushhh)">
+                    <div onclick="change()" id="loginbtn" class="change">Already our Customer?? <span>Login.</span></div>
                     <div class="register-chkbx Ccontainer">
                         <label for="signedin-register">
                             <input class="chkbk checkbox" id="signedin-register" type="checkbox">
@@ -120,7 +125,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footer-container">
         <div class="footer-links-container">
             <div class="footer-links">
@@ -132,19 +137,19 @@
                 <a target="_blank" href="https://chat.whatsapp.com/KfMYQjg5WqC9nLb6K4u8Fe">
                     <img src="Assets/footer-assets/icons8-whatsapp 1.png" alt="whatsapp">
                 </a>
-                
+
             </div>
             <div class="footer-links">
                 <a target="_blank" href="https://github.com/prathmesh-ka-github">
                     <img src="Assets/footer-assets/github.png" alt="github">
                 </a>
-                
+
             </div>
             <div class="footer-links">
                 <a target="_blank" href="https://www.instagram.com/_wings_like_eagles_/">
                     <img src="Assets/footer-assets/insta.png" alt="instagram">
                 </a>
-                
+
             </div>
             <div class="footer-links">
                 <a target="_blank" href="https://www.linkedin.com/in/prathmesh-kale-a1713623a/">
@@ -164,4 +169,13 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script>
+    const login = document.getElementById('createAccount')
+    const createacc = document.getElementById('loginPg')
+    function change(){
+        login.classList.toggle('gayab');
+        createacc.classList.toggle('gayab');
+    }
+</script>
+
 </html>
