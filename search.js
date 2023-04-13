@@ -20,7 +20,6 @@ searchInput.addEventListener("input", (e) => {
         users.forEach(user => {
             const isVisible = user.name.toLowerCase().includes(value) || user.tags.toLowerCase().includes(value)
             user.element.classList.toggle("hide",!isVisible)
-            // document.querySelector("[search-results]").classList.toggle("hide",!isVisible)
         })
     }
     // For hoodies
@@ -28,7 +27,6 @@ searchInput.addEventListener("input", (e) => {
         husers.forEach(huser => {
             const ishVisible = huser.hname.toLowerCase().includes(value) || huser.htags.toLowerCase().includes(value)
             huser.helement.classList.toggle("hide",!ishVisible)
-            // document.querySelector("[search-results]").classList.toggle("hide",!isVisible)
         })
     }
     else if(value == ""){
@@ -38,7 +36,6 @@ searchInput.addEventListener("input", (e) => {
         husers.forEach(huser => {
             huser.helement.classList.add("hide")
         })
-        // document.querySelector("[search-results]").classList.toggle("hide")
     }
 })
 
@@ -49,7 +46,6 @@ fetch('./products/data/products.json')
 .then(data => {
     users = data.tshirt.map(product => {
             const card = userCardTemplate.content.cloneNode(true).children[0]
-            // console.log(product)
             const productImage = card.querySelector("[product-image]")
             const header = card.querySelector('[data-name]')
             const imgurl = product.url
