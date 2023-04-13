@@ -8,9 +8,9 @@
 const userCardTemplate = document.querySelector("[data-user-template]")
 const searchResult = document.querySelector("[search-results]")
 const searchInput = document.querySelector("[data-search]")
-console.log(searchInput)
 
 let users = []
+let husers = []
 
 //! Searching and displaying the search results
 searchInput.addEventListener("input", (e) => {
@@ -23,9 +23,20 @@ searchInput.addEventListener("input", (e) => {
             // document.querySelector("[search-results]").classList.toggle("hide",!isVisible)
         })
     }
+    // For hoodies
+    if (value !== "") {
+        husers.forEach(huser => {
+            const ishVisible = huser.hname.toLowerCase().includes(value) || huser.htags.toLowerCase().includes(value)
+            huser.helement.classList.toggle("hide",!ishVisible)
+            // document.querySelector("[search-results]").classList.toggle("hide",!isVisible)
+        })
+    }
     else if(value == ""){
         users.forEach(user => {
             user.element.classList.add("hide")
+        })
+        husers.forEach(huser => {
+            huser.helement.classList.add("hide")
         })
         // document.querySelector("[search-results]").classList.toggle("hide")
     }
@@ -50,16 +61,17 @@ fetch('./products/data/products.json')
     });
     
     // for hoodies
-// fetch('./products/data/tshirt.json')
-//     .then((hresponse) => hresponse.json())
-//     .then(hdata => {
-//         husers = hdata.hoodie.map(hoodie => {
-//             const card = userCardTemplate.content.cloneNode(true).children[0]
-//             // console.log(hoodie)
-//             const header = card.querySelector('[data-name]')
-//             const tags = card.querySelector('[data-tags]')
-//             header.textContent = hoodie.name
-//             searchResult.append(card)
-//             return{hname:hoodie.name, htags:hoodie.tags, helement:card}
-//         });
-//     });
+    fetch('./products/data/products.json')
+    .then((hresponse) => hresponse.json())
+    .then(hdata => {
+        husers = hdata.hoodie.map(hoodie => {
+            const card = userCardTemplate.content.cloneNode(true).children[0]
+            const productImage = card.querySelector("[product-image]")
+            const header = card.querySelector('[data-name]')
+            const imgurl = hoodie.url
+            productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
+            header.textContent = hoodie.name
+            searchResult.append(card)
+            return{hname:hoodie.name, htags:hoodie.tags, helement:card}
+        });
+    });
