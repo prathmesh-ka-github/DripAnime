@@ -1,5 +1,5 @@
 .register-main {
-    padding: 8vw 0px;
+    min-height: 45vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,9 +43,10 @@
 .change {
     margin: 10px 0px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: default;
 }
 .change span {
+    cursor: pointer;
     color: #0096C7;
 }
 
