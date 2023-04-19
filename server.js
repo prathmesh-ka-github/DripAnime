@@ -45,12 +45,12 @@ app.use(express.static(__dirname + '/'));
         })
 
     //?  MAIN AREA OF INDEX
-        app.get('/product-tshirt', (req,res) => {
+        app.get('/tshirts', (req,res) => {
             res.status(200)
             res.sendFile( __dirname + '/products/tshirt.html')
         })
         
-        app.get('/product-hoodie', (req,res) => {
+        app.get('/hoodies', (req,res) => {
             res.status(200)
             res.sendFile( __dirname + '/products/hoodie.html')
         })
