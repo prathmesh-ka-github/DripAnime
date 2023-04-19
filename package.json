@@ -4,16 +4,20 @@
   "description": "Online Anime clothing webstore",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prathmesh-ka-github/DripAnime.git"
   },
   "author": "prathmesh kale",
-  "license": "ISC",
+  "license": "LICENSE",
   "bugs": {
     "url": "https://github.com/prathmesh-ka-github/DripAnime/issues"
   },
-  "homepage": "https://github.com/prathmesh-ka-github/DripAnime#readme"
+  "homepage": "https://github.com/prathmesh-ka-github/DripAnime#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
