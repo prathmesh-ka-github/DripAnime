@@ -5,7 +5,7 @@ let users = []
 
 //! Inserting items into DOM using products.JSON file
 // for tshirts
-fetch('./data/products.json')
+fetch('./products/data/products.json')
 .then((response) => response.json())
 .then(data => {
     users = data.tshirt.map(product => {
@@ -13,7 +13,7 @@ fetch('./data/products.json')
         const productImage = card.querySelector("[product-image]")
         const header = card.querySelector('[data-name]')
         const imgurl = product.url
-        productImage.innerHTML = `<img src="./images/${imgurl}.png" alt="${imgurl}">`
+        productImage.innerHTML = `<img src="./products/images/${imgurl}.png" alt="${imgurl}">`
         header.textContent = product.name
         searchResult.append(card)
         return{name:product.name, tags:product.tags, element:card}
