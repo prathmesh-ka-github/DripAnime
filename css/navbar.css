@@ -117,6 +117,7 @@
     padding: 10px;
     margin-left: 30px;
     font-size: 20px;
+    cursor: pointer;
 }
 .ham {
     display: none;
