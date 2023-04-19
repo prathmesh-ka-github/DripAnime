@@ -54,7 +54,12 @@ app.use(express.static(__dirname + '/'));
             res.status(200)
             res.sendFile( __dirname + '/products/hoodie.html')
         })
-
+        
+        app.get('/lol', (req,res) => {
+            res.status(200)
+            res.write('lol')
+            // res.sendFile( __dirname + '/products/hoodie.html')
+        })
 
 
 
