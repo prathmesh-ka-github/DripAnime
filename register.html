@@ -95,22 +95,20 @@
                 <div class="register-headers">
                     Already our Customer?
                 </div>
-                <div class="register-form">
-                    <!-- email V -->
-                    <input id="login-email" type="text" placeholder="Email ID">
-                    <!-- password V -->
-                    <input id="login-password" type="password" minlength="8" placeholder="Password (shushhh)">
-                    <!-- switch V -->
-                    <div onclick="change()" id="cracc" class="change">New to DripAnime?? <span>Create new account.</span></div>
-                    <div class="register-chkbx Ccontainer">
-                        <label for="signedin-login"><input id="signedin-login" class="chkbk checkbox" type="checkbox">
-                            <span class="checkmark"></span>
-                            Keep me signed in.
-                        </label>
+                <!-- FORM -->
+                <form action="/login" method="POST">
+                    <div class="register-form">
+                        <!-- email V -->
+                        <input id="login-email" name="email" type="text" placeholder="Email ID" required>
+                        <!-- password V -->
+                        <input id="login-password" name="password" type="password" minlength="8" placeholder="Password (shushhh)" required>
+                        <!-- switch V -->
+                        <div onclick="change()" id="cracc" class="change">New to DripAnime?? <span>Create new account.</span></div>
+
+                        <!-- login button V  -->
+                        <button type="submit" id="login-btn">Login</button>
                     </div>
-                    <!-- login button V  -->
-                    <button id="login-btn">Login</button>
-                </div>
+                </form>
             </div>
 
             <!-- !      NEW ACCOUNT      -->
@@ -118,23 +116,20 @@
                 <div class="register-headers">
                     New to DripAnime?
                 </div>
-                <div class="register-form">
-                    <!-- Name V -->
-                    <input type="text" placeholder="Your Name">
-                    <!-- email V -->
-                    <input type="text" placeholder="Email ID">
-                    <!-- email V -->
-                    <input type="number" minlength="10" placeholder="Phone number">
-                    <input type="password" minlength="8" placeholder="Password (shushhh)">
-                    <div onclick="change()" id="loginbtn" class="change">Already our Customer?? <span>Login.</span></div>
-                    <div class="register-chkbx Ccontainer">
-                        <label for="signedin-register">
-                            <input id="signedin-register" class="chkbk checkbox" type="checkbox">
-                            <span class="checkmark"></span>
-                            Keep me signed in.</label>
+                <form action="/signin" method="POST">
+                    <div class="register-form">
+                    <!-- FORM -->
+                        <!-- Name V -->
+                        <input name="username" type="text" placeholder="Your Name" required>
+                        <!-- email V -->
+                        <input name="email" type="text" placeholder="Email ID" required>
+                        <!-- Password V -->
+                        <input name="phonenumber" type="number" minlength="10" placeholder="Phone number" required>
+                        <input name="password" type="password" minlength="8" placeholder="Password (shushhh)" required>
+                        <div onclick="change()" id="loginbtn" class="change">Already our Customer?? <span>Login.</span></div>
+                        <button type="submit">Create New Account</button>
                     </div>
-                    <button>Create New Account</button>
-                </div>
+                </form>
 
             </div>
         </div>

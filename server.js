@@ -6,6 +6,7 @@ app.use(express.json())
 const users = [];
 
 app.use(express.static(__dirname + '/'));
+app.use(express.urlencoded())
 
 
 //! ALL GET ENDPOINTS!!!
@@ -54,12 +55,6 @@ app.use(express.static(__dirname + '/'));
             res.status(200)
             res.sendFile( __dirname + '/products/hoodie.html')
         })
-        
-        app.get('/lol', (req,res) => {
-            res.status(200)
-            // res.write('lol')
-            res.sendFile( __dirname + '/template.html')
-        })
 
 
 
@@ -75,8 +70,24 @@ app.use(express.static(__dirname + '/'));
         res.json(users);
     })
 
+    //! POST METHODS
+    app.post('/signin',(req,res) => {
+        console.log(req.body);
+        const user = req.body;
 
-
+        users.push(user)
+        res.status(200)
+        res.sendFile( __dirname + '/index.html')
+    })
+    app.post('/login',(req,res) => {
+        console.log(req.body);
+        const user = req.body;
+        if (users[0].email == user.email) {
+            console.log('email found!!!')
+        }
+        res.status(200)
+        res.sendFile( __dirname + '/index.html')
+    })
 
 
 
