@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// import SearchUser from './usersearch.js';
+// let doSearchUser = require('./usersearch')
+// const SearchUser = doSearchUser()
+var searching = require('./usersearch')
+console.log(searching.data.user("connect.prathmesh905@gmail.com","12345678"))
+
 app.use(express.json())
 const users = [];
 
@@ -72,9 +78,7 @@ app.use(express.urlencoded())
 
 
 
-
-
-    app.get('/users', (req,res) => {
+       app.get('/users', (req,res) => {
         res.json(users);
     })
 
@@ -90,6 +94,7 @@ app.use(express.urlencoded())
     app.post('/login',(req,res) => {
         console.log(req.body);
         const user = req.body;
+        // SearchUser(user.email , user.password);
         
         res.status(200)
         res.sendFile( __dirname + '/index.html')

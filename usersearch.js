@@ -1,3 +1,5 @@
+var search = {};
+
 const users = [
     {
         "email":"connect.prathmesh905@gmail.com",
@@ -13,7 +15,7 @@ const users = [
 //     "password":"abcdefgh"
 // }
 
-export function SearchUser(email, password) {
+search.user = function SearchUser(email, password) {
     let user = {
         "email" : `${email}`,
         "password" : `${password}`
@@ -44,8 +46,6 @@ export function SearchUser(email, password) {
     // }
 }
 
-SearchUser("connect.prathmesh905@gmail.com","12345678")
+// SearchUser("connect.prathmesh905@gmail.com","12345678")
 
-
-
-// console.log(users[0].password === user.password)
+exports.data = search
