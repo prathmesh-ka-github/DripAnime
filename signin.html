@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DripAnime - </title>
+
+    <link rel="shortcut icon" href="Assets/favicon.png" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/register.css">
+
+</head>
+
+<body>
+    <div class="ribbon">
+        <div class="ribbon-txt">
+            Free shipping available on all prepaid orders more than Rs 499 /-
+        </div>
+    </div>
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="./">
+                <img class="logo-pic" src="Assets/logo-big.png" alt="dripanimelogo">
+            </a>
+        </div>
+        <div class="links-container-wrap">
+            <div class="links-container">
+                <a href="./apparels">
+                    <div class="link">Apparels</div>
+                </a>
+                <a href="./anime">
+                    <div class="link">Anime</div>
+                </a>
+                <a href="./support">
+                    <div class="link">Support</div>
+                </a>
+            </div>
+        </div>
+        <div class="rightnav">
+            <div class="rightlink">
+                <a href="./search">
+                    <img src="Assets/icons8-search-60.png" alt="search bar">
+                </a>
+            </div>
+            <div class="rightlink">
+                <img src="Assets/cart.png" alt="shopping cart">
+            </div>
+            <div class="rightlink nav-active">
+                <img src="Assets/account.png" alt="account">
+            </div>
+            <div class="ham" id="ham">
+                <img src="Assets/ham.png" alt="hamburger menu">
+            </div>
+        </div>
+    </div>
+    <div class="ham-contents" id="ham-contents">
+        <div class="hamlink">
+            <a href="./apparels">
+                Apparels
+            </a>
+        </div>
+        <div class="hamlink">
+            <a href="./anime">
+                Anime
+            </a>
+        </div>
+        <div class="hamlink">
+            <a href="./support">
+                Support
+            </a>
+        </div>
+        <div class="more-container hamlink">
+            <div class="more ">
+                <img id="cart" src="./Assets/cart.png" alt="">
+                <a href="./search">
+                    <img src="Assets/icons8-search-60.png" alt="search bar">
+                </a>
+                <img id="account" src="Assets/account.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="register-main">
+        <div class="register-container ">
+            <!-- !      SIGNIN      -->
+            <div class="login-account main-containers" id="createAccount">
+                <div class="register-headers">
+                    New to DripAnime?
+                </div>
+                <form action="/signin" method="POST">
+                    <div class="register-form">
+                    <!-- FORM -->
+                        <!-- Name V -->
+                        <input name="username" type="text" placeholder="Your Name" required>
+                        <!-- email V -->
+                        <input name="email" type="text" placeholder="Email ID" required>
+                        <!-- Phone number V -->
+                        <input name="phonenumber" type="number" minlength="10" placeholder="Phone number" required>
+                        <!-- Password V -->
+                        <input name="password" type="password" minlength="8" placeholder="Password (shushhh)" required>
+                        
+                        <a href="/login" id="loginbtn" class="change">Already our Customer?? <span>Login.</span></a>
+                        
+                        <button type="submit">Create New Account</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-links-container">
+            <div class="footer-links">
+                <a target="_blank" href="mailto:connect.prathmesh905@gmail.com">
+                    <img src="Assets/footer-assets/mail.png" alt="mail">
+                </a>
+            </div>
+            <div class="footer-links">
+                <a target="_blank" href="https://chat.whatsapp.com/KfMYQjg5WqC9nLb6K4u8Fe">
+                    <img src="Assets/footer-assets/icons8-whatsapp 1.png" alt="whatsapp">
+                </a>
+
+            </div>
+            <div class="footer-links">
+                <a target="_blank" href="https://github.com/prathmesh-ka-github">
+                    <img src="Assets/footer-assets/github.png" alt="github">
+                </a>
+
+            </div>
+            <div class="footer-links">
+                <a target="_blank" href="https://www.instagram.com/_wings_like_eagles_/">
+                    <img src="Assets/footer-assets/insta.png" alt="instagram">
+                </a>
+
+            </div>
+            <div class="footer-links">
+                <a target="_blank" href="https://www.linkedin.com/in/prathmesh-kale-a1713623a/">
+                    <img src="Assets/footer-assets/linkdln.png" alt="linkdln">
+                </a>
+            </div>
+        </div>
+        <div class="footer-main">
+            <a href="index.html">
+
+                <div class="footer-logo">
+                    <img class="footer-logo-img" src="Assets/logo-big.png" alt="dripanime logo">
+                </div>
+            </a>
+            <div class="footer-copyright">Copyright © 2023 - All right reserved by DripAnime.io on GitHub Pages.</div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

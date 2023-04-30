@@ -40,9 +40,17 @@ app.use(express.urlencoded())
             res.status(200)
             res.sendFile( __dirname + '/search.html')
         })
-        app.get('/register', (req,res) => {
+        app.get('/login', (req,res) => {
             res.status(200)
-            res.sendFile( __dirname + '/register.html')
+            res.sendFile( __dirname + '/login.html')
+        })
+        app.get('/signin', (req,res) => {
+            res.status(200)
+            res.sendFile( __dirname + '/signin.html')
+        })
+        app.get('/profile',(req, res)=> {
+            res.status(200)
+            res.sendFile(__dirname + '/profile.html')
         })
 
     //?  MAIN AREA OF INDEX
@@ -82,9 +90,7 @@ app.use(express.urlencoded())
     app.post('/login',(req,res) => {
         console.log(req.body);
         const user = req.body;
-        if (users[0].email == user.email) {
-            console.log('email found!!!')
-        }
+        
         res.status(200)
         res.sendFile( __dirname + '/index.html')
     })

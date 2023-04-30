@@ -28,26 +28,26 @@
     </div>
     <div class="navbar-container">
         <div class="logo">
-            <a href="index.html">
+            <a href="./">
                 <img class="logo-pic" src="Assets/logo-big.png" alt="dripanimelogo">
             </a>
         </div>
         <div class="links-container-wrap">
             <div class="links-container">
-                <a href="apparels.html">
+                <a href="./apparels">
                     <div class="link">Apparels</div>
                 </a>
-                <a href="anime.html">
+                <a href="./anime">
                     <div class="link">Anime</div>
                 </a>
-                <a href="support.html">
+                <a href="./support">
                     <div class="link">Support</div>
                 </a>
             </div>
         </div>
         <div class="rightnav">
             <div class="rightlink">
-                <a href="search.html">
+                <a href="./search">
                     <img src="Assets/icons8-search-60.png" alt="search bar">
                 </a>
             </div>
@@ -64,24 +64,24 @@
     </div>
     <div class="ham-contents" id="ham-contents">
         <div class="hamlink">
-            <a href="apparels.html">
+            <a href="./apparels">
                 Apparels
             </a>
         </div>
         <div class="hamlink">
-            <a href="anime.html">
+            <a href="./anime">
                 Anime
             </a>
         </div>
         <div class="hamlink">
-            <a href="./support.html">
+            <a href="./support">
                 Support
             </a>
         </div>
         <div class="more-container hamlink">
             <div class="more ">
-                <img id="cart" src="Assets/cart.png" alt="">
-                <a href="search.html">
+                <img id="cart" src="./Assets/cart.png" alt="">
+                <a href="./search">
                     <img src="Assets/icons8-search-60.png" alt="search bar">
                 </a>
                 <img id="account" src="Assets/account.png" alt="">
@@ -103,34 +103,12 @@
                         <!-- password V -->
                         <input id="login-password" name="password" type="password" minlength="8" placeholder="Password (shushhh)" required>
                         <!-- switch V -->
-                        <div onclick="change()" id="cracc" class="change">New to DripAnime?? <span>Create new account.</span></div>
+                        <a href="/signin" id="cracc" class="change">New to DripAnime?? <span>Create new account.</span></a>
 
                         <!-- login button V  -->
                         <button type="submit" id="login-btn">Login</button>
                     </div>
                 </form>
-            </div>
-
-            <!-- !      NEW ACCOUNT      -->
-            <div class="login-account main-containers gayab" id="createAccount">
-                <div class="register-headers">
-                    New to DripAnime?
-                </div>
-                <form action="/signin" method="POST">
-                    <div class="register-form">
-                    <!-- FORM -->
-                        <!-- Name V -->
-                        <input name="username" type="text" placeholder="Your Name" required>
-                        <!-- email V -->
-                        <input name="email" type="text" placeholder="Email ID" required>
-                        <!-- Password V -->
-                        <input name="phonenumber" type="number" minlength="10" placeholder="Phone number" required>
-                        <input name="password" type="password" minlength="8" placeholder="Password (shushhh)" required>
-                        <div onclick="change()" id="loginbtn" class="change">Already our Customer?? <span>Login.</span></div>
-                        <button type="submit">Create New Account</button>
-                    </div>
-                </form>
-
             </div>
         </div>
     </div>
@@ -178,13 +156,4 @@
     </div>
 </body>
 <script src="script.js"></script>
-<script>
-    const login = document.getElementById('createAccount')
-    const createacc = document.getElementById('loginPg')
-    function change(){
-        login.classList.toggle('gayab');
-        createacc.classList.toggle('gayab');
-    }
-</script>
-
 </html>
