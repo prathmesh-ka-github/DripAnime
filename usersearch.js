@@ -10,10 +10,6 @@ const users = [
         "password":"abcdefgh"
     }
 ]
-// const user = {
-//     "email":"connect.vivek@gmail.com",
-//     "password":"abcdefgh"
-// }
 
 search.user = function SearchUser(email, password) {
     let user = {

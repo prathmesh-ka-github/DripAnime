@@ -2,14 +2,11 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// import SearchUser from './usersearch.js';
-// let doSearchUser = require('./usersearch')
-// const SearchUser = doSearchUser()
-var searching = require('./usersearch')
-console.log(searching.data.user("connect.prathmesh905@gmail.com","12345678"))
+// var search = require('./usersearch')
+// console.log(search.data.user("connect.prathmesh905@gmail.com","12345678"))
+const users = [];
 
 app.use(express.json())
-const users = [];
 
 app.use(express.static(__dirname + '/'));
 app.use(express.urlencoded())
@@ -60,12 +57,12 @@ app.use(express.urlencoded())
         })
 
     //?  MAIN AREA OF INDEX
-        app.get('/tshirts', (req,res) => {
+        app.get('/product-tshirts', (req,res) => {
             res.status(200)
             res.sendFile( __dirname + '/products/tshirt.html')
         })
         
-        app.get('/hoodies', (req,res) => {
+        app.get('/product-hoodies', (req,res) => {
             res.status(200)
             res.sendFile( __dirname + '/products/hoodie.html')
         })
@@ -78,26 +75,28 @@ app.use(express.urlencoded())
 
 
 
-       app.get('/users', (req,res) => {
-        res.json(users);
-    })
+        app.get('/users', (req,res) => {
+            res.json(users);
+        })
 
-    //! POST METHODS
-    app.post('/signin',(req,res) => {
+//! POST METHODS
+    app.post('/signin',(req,res,next) => {
         console.log(req.body);
         const user = req.body;
 
         users.push(user)
         res.status(200)
-        res.sendFile( __dirname + '/index.html')
+        res.redirect('/login')
+        next();
     })
-    app.post('/login',(req,res) => {
+    app.post('/login',(req,res,next) => {
         console.log(req.body);
         const user = req.body;
-        // SearchUser(user.email , user.password);
+        SearchUser(user);
         
         res.status(200)
-        res.sendFile( __dirname + '/index.html')
+        res.redirect('/')
+        next();
     })
 
 
@@ -106,3 +105,41 @@ app.use(express.urlencoded())
 app.listen(port,() => {
     console.log(`Listening to http://localhost:${port}/`)
 })
+
+
+
+
+
+
+
+
+
+
+
+// !!!!!        SEARCH FUNCTIONS FOR LOGINS         !!!!!
+function SearchUser(getuser) {
+    let userfound = false;
+    for ( i = 0; i < users.length; i++) {
+        let emailmatched = users[i].email === getuser.email
+        let passwordmatched = users[i].password === getuser.password
+        // console.log(i)
+        if (emailmatched && passwordmatched) {
+            console.log('User found!!!')
+            userfound = true;
+            break;
+        }
+        else if(!emailmatched && !passwordmatched){
+            // console.log("Searching")
+            break
+        }
+        else if (emailmatched && !passwordmatched){
+            console.log('Password incorrect')
+        }
+    }
+    if (userfound) {
+        console.log("login sucessful")
+    }
+    // else {
+    //     console.log("Password or email incorrect!")
+    // }
+}

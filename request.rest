@@ -3,15 +3,11 @@ GET http://localhost:3000/
 ###
 //Creating new users
 POST http://localhost:3000/users
-Content-Type: application/json
-{
-    "name":"kyle",
-    "password":"1234"
-}
+
 
 ###
 //Getting number of users
 GET http://localhost:3000/users
 ###
 //Getting number of users
-GET http://localhost:3000/product-tshirt
+GET http://localhost:3000/product-tshirts
