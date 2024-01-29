@@ -1,4 +1,4 @@
 # DripAnime Store
 
 ### Online webstore for your Apparel needs!
-https://prathmesh-ka-github.github.io/DripAnime/
+(No link available as the backend is being developed`)
