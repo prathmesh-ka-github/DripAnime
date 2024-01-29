@@ -1,9 +1,13 @@
 /*
+
     ? This is the beta testing stage for now, with dummy text.
     //TODO Add img urls and make working cards of products.
     //TODO Now adding products
-    TODO  
+    TODO Rendering tshirts in tshirt section
+    TODO Rendering hoodies in hoodies section 
+
 */
+
 // For search-bar
 const userCardTemplate = document.querySelector("[data-user-template]")
 const searchResult = document.querySelector("[search-results]")
@@ -19,17 +23,17 @@ searchInput.addEventListener("input", (e) => {
     if (value !== "") {
         users.forEach(user => {
             const isVisible = user.name.toLowerCase().includes(value) || user.tags.toLowerCase().includes(value)
-            user.element.classList.toggle("hide",!isVisible)
+            user.element.classList.toggle("hide", !isVisible)
         })
     }
     // For hoodies
     if (value !== "") {
         husers.forEach(huser => {
             const ishVisible = huser.hname.toLowerCase().includes(value) || huser.htags.toLowerCase().includes(value)
-            huser.helement.classList.toggle("hide",!ishVisible)
+            huser.helement.classList.toggle("hide", !ishVisible)
         })
     }
-    else if(value == ""){
+    else if (value == "") {
         users.forEach(user => {
             user.element.classList.add("hide")
         })
@@ -39,12 +43,12 @@ searchInput.addEventListener("input", (e) => {
     }
 })
 
-//! Inserting items into DOM using products.JSON file
+//! Inserting cards into DOM using products.JSON file
 // for tshirts
 fetch('./products/data/products.json')
-.then((response) => response.json())
-.then(data => {
-    users = data.tshirt.map(product => {
+    .then((response) => response.json())
+    .then(data => {
+        users = data.tshirt.map(product => {
             const card = userCardTemplate.content.cloneNode(true).children[0]
             const productImage = card.querySelector("[product-image]")
             const header = card.querySelector('[data-name]')
@@ -52,12 +56,12 @@ fetch('./products/data/products.json')
             productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
             header.textContent = product.name
             searchResult.append(card)
-            return{name:product.name, tags:product.tags, element:card}
+            return { name: product.name, tags: product.tags, element: card }
         });
     });
-    
-    // for hoodies
-    fetch('./products/data/products.json')
+
+// for hoodies
+fetch('./products/data/products.json')
     .then((hresponse) => hresponse.json())
     .then(hdata => {
         husers = hdata.hoodie.map(hoodie => {
@@ -68,6 +72,6 @@ fetch('./products/data/products.json')
             productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
             header.textContent = hoodie.name
             searchResult.append(card)
-            return{hname:hoodie.name, htags:hoodie.tags, helement:card}
+            return { hname: hoodie.name, htags: hoodie.tags, helement: card }
         });
     });
