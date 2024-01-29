@@ -59,12 +59,12 @@ app.use(express.urlencoded())
     //?  MAIN AREA OF INDEX
         app.get('/product-tshirts', (req,res) => {
             res.status(200)
-            res.sendFile( __dirname + '/products/tshirt.html')
+            res.sendFile( __dirname + '/tshirt.html')
         })
         
         app.get('/product-hoodies', (req,res) => {
             res.status(200)
-            res.sendFile( __dirname + '/products/hoodie.html')
+            res.sendFile( __dirname + '/hoodie.html')
         })
 
 
