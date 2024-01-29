@@ -11,8 +11,8 @@ const loader = document.querySelector(".loader-container-main")
 window.addEventListener("load",function(){
     setTimeout(() => {
         loader.style.opacity = "0"
-    }, 500);
+    }, 100);
     setTimeout(() => {
         loader.style.display = "none"
-    }, 800);
+    }, 300);
 })
