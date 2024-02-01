@@ -3,8 +3,10 @@
     ? This is the beta testing stage for now, with dummy text.
     //TODO Add img urls and make working cards of products.
     //TODO Now adding products
-    TODO Rendering tshirts in tshirt section
-    TODO Rendering hoodies in hoodies section 
+    //TODO Rendering tshirts in tshirt section
+    //TODO Rendering hoodies in hoodies section 
+    TODO Rendering Jackets in Jackets section
+    TODO Rendering Full sleeve Tshirt in Full sleeve Tshirt section
 
 */
 
