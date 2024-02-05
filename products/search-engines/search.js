@@ -1,12 +1,13 @@
 /*
 
-    ? This is the beta testing stage for now, with dummy text.
+    ? This is the beta testing stage for now, with dummy text and JSON as a DB.
     //TODO Add img urls and make working cards of products.
     //TODO Now adding products
     //TODO Rendering tshirts in tshirt section
     //TODO Rendering hoodies in hoodies section 
+    TODO Collect and make content jackets, full sleeves and oversized tshirt sections.
     TODO Rendering Jackets in Jackets section
-    TODO Rendering Full sleeve Tshirt in Full sleeve Tshirt section
+    TODO Rendering Full sleeve Tshirt in Full sleeve Tshirt section.
 
 */
 
