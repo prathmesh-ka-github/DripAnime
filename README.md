@@ -1,19 +1,25 @@
 # DripAnime Store
+### An online webstore for your Apparel needs!
 
-## Online webstore for your Apparel needs!
-</br>
+Now this project's backend is being deployed on a third-party website hosting service "**Render.com**"  
 
-## Now this project's backend is being deployed on a third-party website hosting service "Render.com"
-
->**Render is a unified cloud to build and run all your apps and websites with free TLS certificates, global CDN, private networks and auto deploys from Git.**
+>**Render.com is a unified cloud to build and run all your apps and websites with free TLS certificates, global CDN, private networks and auto deploys from Git.**
 
 </br>
-Using node express commands and nodemon as a dependancy.
+To initialize and deploy the webapp use -
 
 ```
 npm build server
 npm run server
 ```
+## Dependancies -
+1.  express : ^4.18.2  
+1.  dotenv : ^16.4.5  
+1.  nodemon : ^2.0.22  
+1.  pg : ^8.11.3  
+1.  sequelize : ^6.37.1  
 
-_~~(No link available as the backend is being developed.)~~_
-### [URL available. Click here to visit.](https://dripanime.onrender.com)
+
+
+_~~(No link available as the backend is being developed.)~~_  
+[URL available. Click here to visit.](https://dripanime.onrender.com)

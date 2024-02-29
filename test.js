@@ -1,4 +1,4 @@
-const users = [
+var users = [
     {
         "email":"connect.prathmesh905@gmail.com",
         "password":"12345678"

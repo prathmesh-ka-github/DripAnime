@@ -16,3 +16,26 @@ window.addEventListener("load",function(){
         loader.style.display = "none"
     }, 300);
 })
+
+var usernames = [
+    {
+        "id":"1",
+        "username":"pratham",
+        "email":"",
+        "phone":"",
+        "password":"1234",
+    }
+]
+// console.log (usernames)
+
+function register() {
+    var signinform = document.getElementById("signinform")
+    var length = usernames.length + 1
+    usernames ={...usernames, 1 : {username : signinform.username.value}}
+    // usernames[1].email = signinform.email.value
+    usernames[0].phone = signinform.phonenumber.value
+    usernames[0].password = signinform.password.value
+    // console.log(signinform.username.value)
+    console.log(usernames)
+
+}
