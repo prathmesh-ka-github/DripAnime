@@ -108,7 +108,7 @@
     position: sticky;
     top: 80px;
     background-color: white;
-    z-index: 2;
+    z-index: 20;
     display: none;
 }
 .hamlink{
