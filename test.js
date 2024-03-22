@@ -1,51 +1,110 @@
-var users = [
-    {
-        "email":"connect.prathmesh905@gmail.com",
-        "password":"12345678"
-    },
-    {
-        "email":"connect.vivek@gmail.com",
-        "password":"abcdefgh"
-    }
-]
-// const user = {
-//     "email":"connect.vivek@gmail.com",
-//     "password":"abcdefgh"
+// var users = [
+//     {
+//         "email":"connect.prathmesh905@gmail.com",
+//         "password":"12345678"
+//     },
+//     {
+//         "email":"connect.vivek@gmail.com",
+//         "password":"abcdefgh"
+//     }
+// ]
+// // const user = {
+// //     "email":"connect.vivek@gmail.com",
+// //     "password":"abcdefgh"
+// // }
+
+// export function SearchUser(email, password) {
+//     let user = {
+//         "email" : `${email}`,
+//         "password" : `${password}`
+//     }
+//     let userfound = false;
+//     for (let i = 0; i < users.length; i++) {
+//         let emailmatched = users[i].email === user.email
+//         let passwordmatched = users[i].password === user.password
+//         // console.log(i)
+//         if (emailmatched && passwordmatched) {
+//             console.log('User found!!!')
+//             userfound = true;
+//             break;
+//         }
+//         else if(!emailmatched && !passwordmatched){
+//             // console.log("Searching")
+//             break
+//         }
+//         else if (emailmatched && !passwordmatched){
+//             console.log('Password incorrect')
+//         }
+//     }
+//     if (userfound) {
+//         console.log("login sucessful")
+//     }
+//     // else {
+//     //     console.log("Password or email incorrect!")
+//     // }
 // }
 
-export function SearchUser(email, password) {
-    let user = {
-        "email" : `${email}`,
-        "password" : `${password}`
-    }
-    let userfound = false;
-    for (let i = 0; i < users.length; i++) {
-        let emailmatched = users[i].email === user.email
-        let passwordmatched = users[i].password === user.password
-        // console.log(i)
-        if (emailmatched && passwordmatched) {
-            console.log('User found!!!')
-            userfound = true;
-            break;
-        }
-        else if(!emailmatched && !passwordmatched){
-            // console.log("Searching")
-            break
-        }
-        else if (emailmatched && !passwordmatched){
-            console.log('Password incorrect')
-        }
-    }
-    if (userfound) {
-        console.log("login sucessful")
-    }
-    // else {
-    //     console.log("Password or email incorrect!")
-    // }
+// SearchUser("connect.prathmesh905@gmail.com","12345678")
+// console.log(users[0].password === user.password)
+
+
+const fs = require('fs')
+let usersdata
+let push = []
+const newObj = {
+    "name":"Chanchal",
+    "email":"chanchu@google.com",
+    "password":"chanchalchapassword"
 }
 
-SearchUser("connect.prathmesh905@gmail.com","12345678")
+const newObj2 = {
+    "name":"Khudsi💺",
+    "email":"khudchi@google.com",
+    "password":"khudsichapassword"
+}
+
+// ! READING THE JSON DATA FILE WITH FS
+// ? ReadFile
+// ! ERR - parsing and assigning takes time so push array is left empty.
+
+// fs.readFile("./products/data/users.json", 'utf-8', (err, jsonString) => {
+//     if (err) {
+//         console.error(err.message)
+//     } else {
+//         try {
+//             usersdata = JSON.parse(jsonString);
+//             // console.log(usersdata)
+//             // usersdata.forEach(e => {
+//             //     console.log(e)
+//             // })
+//             const mergedobj = Object.assign(usersdata[0], newObj)
+//             push = usersdata
+//             console.log("Push variable - " , push)
+
+//         } catch (error) {
+//             console.error(error.message)
+//         }
+//     }
+// })
+
+// ? ReadFileSync
+
+try {
+    const jsonstring = fs.readFileSync('./products/data/users.json', 'utf-8');
+    const customer = JSON.parse(jsonstring);
+    Object.assign(customer[0], newObj)
+    push = customer
+} catch (err) {
+    console.error(err)
+}
 
 
+// ! WRITING THE JSON DATA TO FILE WITH FS
 
-// console.log(users[0].password === user.password)
+fs.writeFile("./products/data/testdata.json", JSON.stringify(push, null, 2), err => {
+    if (err) {
+        console.log(err.message)
+    } else {
+        console.log('File successfully written!')
+    }
+})
