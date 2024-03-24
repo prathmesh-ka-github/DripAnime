@@ -1,17 +1,14 @@
 [
     {
-        "name" : "Prathmesh",
-        "email" : "connect.prathmesh905@gmail.com",
-        "password" : "pass@123"
+        "username": "Vishal",
+        "email": "vishallavangare@outlook.com",
+        "phonenumber": "1234567891",
+        "password": "vishalchapassword"
     },
     {
-        "name" : "Bhakti",
-        "email" : "bhaktinirbhaybhatt@gmail.com",
-        "password" : "bhaktipassword"
-    },
-    {
-        "name" : "Vedclove",
-        "email" : "bhisallavangare@gmail.com",
-        "password" : "chanchu123"
+        "username": "Pratham",
+        "email": "connect.prathmeshkale@outlook.com",
+        "phonenumber": "9834467860",
+        "password": "pratham@02"
     }
 ]

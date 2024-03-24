@@ -1,11 +1,9 @@
 require("dotenv").config()
+const fs = require('fs')
 const express = require('express');
 const app = express();
 const port = 3000;
 
-// var search = require('./usersearch')
-// console.log(search.data.user("connect.prathmesh905@gmail.com","12345678"))
-const users = [];
 
 app.use(express.json())
 
@@ -82,14 +80,15 @@ app.use(express.urlencoded())
 
 //! POST METHODS
     app.post('/signin',(req,res,next) => {
-        console.log(req.body);
+        // console.log(req.body);
         const user = req.body;
+        addUser(user)
 
-        users.push(user)
         res.status(200)
         res.redirect('/login')
         next();
     })
+
     app.post('/login',(req,res,next) => {
         console.log(req.body);
         const user = req.body;
@@ -115,32 +114,35 @@ app.listen(port,() => {
 
 
 
+function addUser(user) {
+    let push = []
+
+    if (user.username !=="" & user.email !=="" & user.phonenumber !=="" & user.password !=="") {
+        try {
+            try {
+                const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+                const jsondata = JSON.parse(data);
+                // To edit -  Object.assign(data[0], newObj)
+                jsondata.push(user)
+                console.log(jsondata)
+                push = jsondata
+            } catch (err) {
+                console.error(err)
+            }
+
+            fs.writeFile("./products/data/users.json", JSON.stringify(push, null, 4), err => {
+                if (err) {
+                    console.log(err.message)
+                } else {
+                    console.log('File successfully written!')
+                }
+            })
 
 
-// !!!!!        SEARCH FUNCTIONS FOR LOGINS         !!!!!
-function SearchUser(getuser) {
-    let userfound = false;
-    for ( i = 0; i < users.length; i++) {
-        let emailmatched = users[i].email === getuser.email
-        let passwordmatched = users[i].password === getuser.password
-        // console.log(i)
-        if (emailmatched && passwordmatched) {
-            console.log('User found!!!')
-            userfound = true;
-            break;
-        }
-        else if(!emailmatched && !passwordmatched){
-            // console.log("Searching")
-            break
-        }
-        else if (emailmatched && !passwordmatched){
-            console.log('Password incorrect')
+            console.log(user)
+            console.log("User added successfully")        
+        } catch (err) {
+            console.error(err.message)
         }
     }
-    if (userfound) {
-        console.log("login sucessful")
-    }
-    // else {
-    //     console.log("Password or email incorrect!")
-    // }
 }

@@ -63,6 +63,17 @@ const newObj2 = {
     "password":"khudsichapassword"
 }
 
+const newObj3 = {
+    "name":"Prathmesh",
+    "email":"pratham@google.com",
+    "password":"pratham@password"
+}
+const newObj4 = {
+    "name":"Someoone",
+    "email":"someguy@google.com",
+    "password":"guys@password"
+}
+
 // ! READING THE JSON DATA FILE WITH FS
 // ? ReadFile
 // ! ERR - parsing and assigning takes time so push array is left empty.
@@ -89,10 +100,14 @@ const newObj2 = {
 
 // ? ReadFileSync
 
+// function 
+
 try {
-    const jsonstring = fs.readFileSync('./products/data/users.json', 'utf-8');
+    const jsonstring = fs.readFileSync('./products/data/testdata.json', 'utf-8');
     const customer = JSON.parse(jsonstring);
-    Object.assign(customer[0], newObj)
+    // Object.assign(customer[0], newObj)
+    customer.push(newObj)
+    console.log(customer)
     push = customer
 } catch (err) {
     console.error(err)
@@ -108,3 +123,9 @@ fs.writeFile("./products/data/testdata.json", JSON.stringify(push, null, 2), err
         console.log('File successfully written!')
     }
 })
+
+
+function adduser(user) {
+    console.log("user added!!")
+}
+adduser()
