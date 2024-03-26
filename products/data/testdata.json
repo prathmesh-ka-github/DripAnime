@@ -1,8 +1,9 @@
 [
     {
-        "name": "Bhakti",
-        "email": "bhaktinirbhaybhatt@gmail.com",
-        "password": "bhaktipassword"
+        "username": "Vishal",
+        "email": "vishallavangare@outlook.com",
+        "phonenumber": "1234567891",
+        "password": "vishalchapassword"
     },
     {
         "username": "Pratham",

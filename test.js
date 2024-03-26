@@ -48,31 +48,31 @@
 // console.log(users[0].password === user.password)
 
 
-const fs = require('fs')
-let usersdata
-let push = []
-const newObj = {
-    "name":"Chanchal",
-    "email":"chanchu@google.com",
-    "password":"chanchalchapassword"
-}
+// const fs = require('fs')
+// let usersdata
+// let push = []
+// const newObj = {
+//     "name":"Chanchal",
+//     "email":"chanchu@google.com",
+//     "password":"chanchalchapassword"
+// }
 
-const newObj2 = {
-    "name":"Khudsi💺",
-    "email":"khudchi@google.com",
-    "password":"khudsichapassword"
-}
+// const newObj2 = {
+//     "name":"Khudsi💺",
+//     "email":"khudchi@google.com",
+//     "password":"khudsichapassword"
+// }
 
-const newObj3 = {
-    "name":"Prathmesh",
-    "email":"pratham@google.com",
-    "password":"pratham@password"
-}
-const newObj4 = {
-    "name":"Someoone",
-    "email":"someguy@google.com",
-    "password":"guys@password"
-}
+// const newObj3 = {
+//     "name":"Prathmesh",
+//     "email":"pratham@google.com",
+//     "password":"pratham@password"
+// }
+// const newObj4 = {
+//     "name":"Someoone",
+//     "email":"someguy@google.com",
+//     "password":"guys@password"
+// }
 
 // ! READING THE JSON DATA FILE WITH FS
 // ? ReadFile
@@ -102,30 +102,81 @@ const newObj4 = {
 
 // function 
 
+// try {
+//     const jsonstring = fs.readFileSync('./products/data/testdata.json', 'utf-8');
+//     const customer = JSON.parse(jsonstring);
+//     // Object.assign(customer[0], newObj)
+//     customer.push(newObj)
+//     console.log(customer)
+//     push = customer
+// } catch (err) {
+//     console.error(err)
+// }
+
+
+// // ! WRITING THE JSON DATA TO FILE WITH FS
+
+// fs.writeFile("./products/data/testdata.json", JSON.stringify(push, null, 2), err => {
+//     if (err) {
+//         console.log(err.message)
+//     } else {
+//         console.log('File successfully written!')
+//     }
+// })
+
+const placeholder= {
+    "username":"bakati",
+    "email":"bhaktibhatt@outlook.com",
+    "phonenumber":"7345968514",
+    "password":"bhaktichapassword"
+}
+
+
+const fs = require('fs')
+let jsonusers
+
+const input =    {
+    "username":"bakati",
+    "email": "vishallavangare@outlook.com",
+    "phonenumber":"7345968514",
+    "password":"bhaktichapassword"
+}
+
 try {
-    const jsonstring = fs.readFileSync('./products/data/testdata.json', 'utf-8');
-    const customer = JSON.parse(jsonstring);
-    // Object.assign(customer[0], newObj)
-    customer.push(newObj)
-    console.log(customer)
-    push = customer
+    const users = fs.readFileSync('./products/data/testdata.json', 'utf-8');
+    jsonusers = JSON.parse(users);
 } catch (err) {
     console.error(err)
 }
 
-
-// ! WRITING THE JSON DATA TO FILE WITH FS
-
-fs.writeFile("./products/data/testdata.json", JSON.stringify(push, null, 2), err => {
-    if (err) {
-        console.log(err.message)
-    } else {
-        console.log('File successfully written!')
+function checkuser(inputuser) {
+    let number = 0
+    jsonusers.forEach(user => {
+        if(inputuser.username === user.username) {
+            console.log("username checked, username found same")
+            number = 1
+        }
+        if(inputuser.email === user.email) {
+            console.log("email checked, email found same")
+            number = 1
+        }
+        if(inputuser.phonenumber === user.phonenumber) {
+            console.log("phonenumber checked, phonenumber found same")
+            number = 1
+        }
+    });
+    if (number ==0) {
+        return 0
     }
-})
-
-
-function adduser(user) {
-    console.log("user added!!")
+    if(number == 1) {
+        return 1
+    }
 }
-adduser()
+
+if (checkuser(input) ){
+    console.log("User exists")
+}
+else {
+    console.log("User dosnt exist")
+    console.log("We can make a new one!")
+}

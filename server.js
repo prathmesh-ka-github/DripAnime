@@ -80,19 +80,37 @@ app.use(express.urlencoded())
 
 //! POST METHODS
     app.post('/signin',(req,res,next) => {
-        // console.log(req.body);
         const user = req.body;
-        addUser(user)
+        
+        if (!checkUser(user)) {
+            addUser(user)
+            console.log("User not found.")
+            console.log("Creating new user.")
+            console.log(checkUser(user))
+            // 204 - Data received but No response sent.
+            // 201 - Resource Created
+            res.status(201)
+            res.redirect('/login')
+        }
+        else {
+            console.log(checkUser(user))
+            console.log("ERR - user found")
+            console.log(user)
+            // res.redirect('/signin')
+            // 400 - Bad request. Error from client side.
+            res.status(400).json({
+                "err":"User already exists, go to login.",
+                "code":400
+            })
+        }
 
-        res.status(200)
-        res.redirect('/login')
-        next();
+        // next();
     })
 
     app.post('/login',(req,res,next) => {
         console.log(req.body);
         const user = req.body;
-        SearchUser(user);
+        searchUser(user);
         
         res.status(200)
         res.redirect('/')
@@ -109,9 +127,36 @@ app.listen(port,() => {
 
 
 
+//! === === Functions === === 
 
-
-
+function checkUser(inputuser) {
+    let jsondata
+    let check = 0
+    try {
+        const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+        jsondata = JSON.parse(data);
+        jsondata.forEach(user => {
+            if(inputuser.username === user.username) {
+                check = 1
+            }
+            if(inputuser.email === user.email) {
+                check = 1
+            }
+            if(inputuser.phonenumber === user.phonenumber) {
+                check = 1
+            }
+        });
+    } catch (err) {
+        console.error(err)
+    }
+    
+    if (check ==0) {
+        return 0
+    }
+    if(check == 1) {
+        return 1
+    }
+}
 
 
 function addUser(user) {
@@ -122,7 +167,6 @@ function addUser(user) {
             try {
                 const data = fs.readFileSync('./products/data/users.json', 'utf-8');
                 const jsondata = JSON.parse(data);
-                // To edit -  Object.assign(data[0], newObj)
                 jsondata.push(user)
                 console.log(jsondata)
                 push = jsondata
@@ -136,10 +180,7 @@ function addUser(user) {
                 } else {
                     console.log('File successfully written!')
                 }
-            })
-
-
-            console.log(user)
+            })  
             console.log("User added successfully")        
         } catch (err) {
             console.error(err.message)
