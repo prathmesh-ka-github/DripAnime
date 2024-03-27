@@ -1,14 +1,15 @@
 require("dotenv").config()
 const fs = require('fs')
 const express = require('express');
+const { log } = require("console");
 const app = express();
 const port = 3000;
 
 
 app.use(express.json())
+app.use(express.urlencoded({extended : false}));
 
 app.use(express.static(__dirname + '/'));
-app.use(express.urlencoded())
 
 
 //! ALL GET ENDPOINTS!!!
@@ -75,36 +76,45 @@ app.use(express.urlencoded())
 
 
         app.get('/users', (req,res) => {
-            res.json(users);
+            let jsondata
+            try {
+                const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+                jsondata = JSON.parse(data);
+                console.log(jsondata)
+                res.status(200).json(jsondata);
+            } catch (err) {
+                console.error(err)
+            }
         })
 
 //! POST METHODS
     app.post('/signin',(req,res,next) => {
-        const user = req.body;
-        
-        if (!checkUser(user)) {
-            addUser(user)
-            console.log("User not found.")
-            console.log("Creating new user.")
-            console.log(checkUser(user))
-            // 204 - Data received but No response sent.
-            // 201 - Resource Created
-            res.status(201)
-            res.redirect('/login')
+        try {
+            const user = req.body;
+            console.log("\"94, server.js\"", user )
+            if (!checkUser(user)) {
+                console.log("User not found.")
+                console.log("Creating new user.")
+                addUser(user)
+                // 204 - Data received but No response sent.
+                // 201 - Resource Created
+                res.status(201)
+                res.redirect('/login')
+            }
+            else {
+                console.log(checkUser(user))
+                console.log("ERR - user found")
+                // res.redirect('/signin')
+                // 400 - Bad request. Error from client side.
+                res.status(400).json({
+                    "err":"User already exists, go to login.",
+                    "code":400
+                })
+            }
+            next();
+        } catch (error) {
+            console.error(error);
         }
-        else {
-            console.log(checkUser(user))
-            console.log("ERR - user found")
-            console.log(user)
-            // res.redirect('/signin')
-            // 400 - Bad request. Error from client side.
-            res.status(400).json({
-                "err":"User already exists, go to login.",
-                "code":400
-            })
-        }
-
-        // next();
     })
 
     app.post('/login',(req,res,next) => {
@@ -168,7 +178,6 @@ function addUser(user) {
                 const data = fs.readFileSync('./products/data/users.json', 'utf-8');
                 const jsondata = JSON.parse(data);
                 jsondata.push(user)
-                console.log(jsondata)
                 push = jsondata
             } catch (err) {
                 console.error(err)

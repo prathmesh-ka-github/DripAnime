@@ -16,11 +16,9 @@ npm run server
 1.  express : ^4.18.2  
 1.  nodemon : ^2.0.22  
 1.  dotenv : ^16.4.5  
-1.  pg : ^8.11.3  
-1.  sequelize : ^6.37.1  
 
 ### Tech stack used -
-1. PostgreSQL (Sequelize ORM)
+1. MongoDB
 1. ExpressJS
 1. NodeJS
 

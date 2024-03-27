@@ -148,20 +148,20 @@
                 <div class="register-headers">
                     New to DripAnime?
                 </div>
-                <form id="signinform" action="/signin" method="POST">
+                <form id="signinform">
                     <div class="register-form">
                     <!-- FORM -->
                         <!-- Name V -->
-                        <input name="username" type="text" placeholder="Your Name" required>
+                        <input value="newusername" name="username" autofocus type="text" placeholder="Your Name" required>
                         <!-- email V -->
-                        <input name="email" type="email" placeholder="Email ID" required>
+                        <input value="email@email.com" name="email" type="email" placeholder="Email ID" required>
                         <!-- Phone number V -->
-                        <input name="phonenumber" type="number" minlength="10" placeholder="Phone number" required>
+                        <input value="8654213257" name="phonenumber" type="tel"  minlength="10" maxlength="10" placeholder="Phone number" required>
                         <!-- Password V -->
-                        <input name="password" type="password" minlength="8" placeholder="Password (shushhh)" required>
-                        
+                        <input value="pass12324" name="password" autocomplete="on" type="password" minlength="8" placeholder="Password (shushhh)" required>
+                        <div class="change" id="errorlog">ERR - User already exists! Try again or head to login.</div>
                         <a href="/login" id="loginbtn" class="change">Already our Customer?? <span>Login.</span></a>
-                        
+
                         <button type="submit">Create New Account</button>
                     </div>
                 </form>
@@ -213,4 +213,5 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script src="signinfunctions.js" defer></script>
 </html>

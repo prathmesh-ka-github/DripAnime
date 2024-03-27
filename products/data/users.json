@@ -22,5 +22,11 @@
         "email": "bhaktinirbhaybhatt@gmail.com",
         "phonenumber": "888455444545",
         "password": "awdawdawdawdawdawd"
+    },
+    {
+        "username": "newusername",
+        "email": "email@email.com",
+        "phonenumber": "8654213257",
+        "password": "pass12324"
     }
 ]
