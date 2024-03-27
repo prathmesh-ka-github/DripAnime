@@ -146,13 +146,7 @@ function checkUser(inputuser) {
         const data = fs.readFileSync('./products/data/users.json', 'utf-8');
         jsondata = JSON.parse(data);
         jsondata.forEach(user => {
-            if(inputuser.username === user.username) {
-                check = 1
-            }
             if(inputuser.email === user.email) {
-                check = 1
-            }
-            if(inputuser.phonenumber === user.phonenumber) {
                 check = 1
             }
         });
