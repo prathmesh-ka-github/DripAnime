@@ -15,7 +15,8 @@ npm run server
 ### Dependancies -
 1.  express : ^4.18.2  
 1.  nodemon : ^2.0.22  
-1.  dotenv : ^16.4.5  
+1.  dotenv : ^16.4.5
+1.  mongoose : ^8.2.3
 
 ### Tech stack used -
 1. MongoDB
