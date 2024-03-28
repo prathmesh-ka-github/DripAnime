@@ -4,6 +4,7 @@ const express = require("express");
 const { log } = require("console");
 const app = express();
 const port = 3000;
+const User = require("./userModal")
 
 const mongoose = require("mongoose")
 mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/")
@@ -13,6 +14,15 @@ app.use(express.urlencoded({extended : false}));
 
 app.use(express.static(__dirname + '/'));
 
+async function insertuser() {
+    User.create({
+        username:"Prathmesh",
+        email : "connect.prathmesh905@gmail.com",
+        phonenumber : "9834467860",
+        password : "pratham@02"
+    })
+}
+// insertuser()
 
 //! ALL GET ENDPOINTS!!!
     //? NAVBAR
@@ -76,18 +86,18 @@ app.use(express.static(__dirname + '/'));
 
 
 
-
-        app.get('/users', (req,res) => {
-            let jsondata
-            try {
-                const data = fs.readFileSync('./products/data/users.json', 'utf-8');
-                jsondata = JSON.parse(data);
-                console.log(jsondata)
-                res.status(200).json(jsondata);
-            } catch (err) {
-                console.error(err)
-            }
-        })
+    //! Fetching users
+    app.get('/users', (req,res) => {
+        let jsondata
+        try {
+            const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+            jsondata = JSON.parse(data);
+            console.log(jsondata)
+            res.status(200).json(jsondata);
+        } catch (err) {
+            console.error(err)
+        }
+    })
 
 //! POST METHODS
     app.post('/signin',(req,res,next) => {
@@ -136,9 +146,6 @@ app.listen(port,() => {
     console.log(`Listening to http://localhost:${port}/`)
 })
 
-
-
-
 //! === === Functions === === 
 
 function checkUser(inputuser) {
@@ -163,7 +170,6 @@ function checkUser(inputuser) {
         return 1
     }
 }
-
 
 function addUser(user) {
     let push = []

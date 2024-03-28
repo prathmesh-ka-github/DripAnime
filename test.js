@@ -149,34 +149,51 @@ try {
     console.error(err)
 }
 
-function checkuser(inputuser) {
-    let number = 0
-    jsonusers.forEach(user => {
-        if(inputuser.username === user.username) {
-            console.log("username checked, username found same")
-            number = 1
-        }
-        if(inputuser.email === user.email) {
-            console.log("email checked, email found same")
-            number = 1
-        }
-        if(inputuser.phonenumber === user.phonenumber) {
-            console.log("phonenumber checked, phonenumber found same")
-            number = 1
-        }
-    });
-    if (number ==0) {
+function checkUser(inputuser) {
+    let jsondata
+    let check = 0
+    try {
+        const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+        jsondata = JSON.parse(data);
+        jsondata.forEach(user => {
+            if(inputuser.email === user.email) {
+                check = 1
+            }
+        });
+    } catch (err) {
+        console.error(err)
+    }
+    
+    if (check ==0) {
         return 0
     }
-    if(number == 1) {
+    if(check == 1) {
         return 1
     }
 }
 
-if (checkuser(input) ){
-    console.log("User exists")
-}
-else {
-    console.log("User dosnt exist")
-    console.log("We can make a new one!")
+function addUser(user) {
+    let push = []
+    if (user.username !=="" & user.email !=="" & user.phonenumber !=="" & user.password !=="") {
+        try {
+            try {
+                const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+                const jsondata = JSON.parse(data);
+                jsondata.push(user)
+                push = jsondata
+            } catch (err) {
+                console.error(err)
+            }
+            fs.writeFile("./products/data/users.json", JSON.stringify(push, null, 4), err => {
+                if (err) {
+                    console.log(err.message)
+                } else {
+                    console.log('File successfully written!')
+                }
+            })  
+            console.log("User added successfully")        
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
 }
