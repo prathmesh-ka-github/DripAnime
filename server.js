@@ -1,13 +1,12 @@
-require("dotenv").config()
 const fs = require("fs")
 const express = require("express");
-const { log } = require("console");
 const app = express();
 const port = 3000;
-const User = require("./userModal")
 
+//? MONGODB CONNECTION
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/")
+const User = require("./userModal")
+mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/DripanimeDB")
 
 app.use(express.json())
 app.use(express.urlencoded({extended : false}));
