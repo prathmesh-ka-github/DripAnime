@@ -1,5 +1,6 @@
 const fs = require("fs")
 const express = require("express");
+var bcrypt = require("bcryptjs");
 const app = express();
 const port = 3000;
 
@@ -12,16 +13,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended : false}));
 
 app.use(express.static(__dirname + '/'));
-
-async function insertuser() {
-    User.create({
-        username:"Prathmesh",
-        email : "connect.prathmesh905@gmail.com",
-        phonenumber : "9834467860",
-        password : "pratham@02"
-    })
-}
-// insertuser()
 
 //! ALL GET ENDPOINTS!!!
     //? NAVBAR
@@ -81,18 +72,11 @@ async function insertuser() {
 
 
 
-
-
-
-
-    //! Fetching users
-    app.get('/users', (req,res) => {
-        let jsondata
+    //! -------------- Fetching users -----------------------
+    app.get('/users', async (req,res) => {
         try {
-            const data = fs.readFileSync('./products/data/users.json', 'utf-8');
-            jsondata = JSON.parse(data);
-            console.log(jsondata)
-            res.status(200).json(jsondata);
+            let data = await User.find()
+            res.status(200).json(data);
         } catch (err) {
             console.error(err)
         }
@@ -103,12 +87,10 @@ async function insertuser() {
         try {
             const user = req.body;
             console.log("\"94, server.js\"", user )
-            if (!checkUser(user)) {
+            if (checkUser(user)) {
                 console.log("User not found.")
                 console.log("Creating new user.")
                 addUser(user)
-                // 204 - Data received but No response sent.
-                // 201 - Resource Created
                 res.status(201)
                 res.redirect('/login')
             }
@@ -128,13 +110,13 @@ async function insertuser() {
         }
     })
 
-    app.post('/login',(req,res,next) => {
-        console.log(req.body);
+    app.post('/login', async(req,res,next) => {
         const user = req.body;
-        searchUser(user);
-        
+        console.log(user)
+        let a = await searchUser(user);
+        res.json(a) 
         res.status(200)
-        res.redirect('/')
+        // res.redirect('/')
         next();
     })
 
@@ -147,53 +129,43 @@ app.listen(port,() => {
 
 //! === === Functions === === 
 
-function checkUser(inputuser) {
-    let jsondata
+async function checkUser(inputuser) {
     let check = 0
     try {
-        const data = fs.readFileSync('./products/data/users.json', 'utf-8');
-        jsondata = JSON.parse(data);
-        jsondata.forEach(user => {
-            if(inputuser.email === user.email) {
-                check = 1
-            }
-        });
+        if (await User.findOne({email : inputuser.email}) !== null) {
+            check = 1
+        }
     } catch (err) {
         console.error(err)
     }
-    
-    if (check ==0) {
-        return 0
-    }
-    if(check == 1) {
-        return 1
-    }
+    return check
 }
 
-function addUser(user) {
-    let push = []
-
+async function addUser(user) {
     if (user.username !=="" & user.email !=="" & user.phonenumber !=="" & user.password !=="") {
         try {
-            try {
-                const data = fs.readFileSync('./products/data/users.json', 'utf-8');
-                const jsondata = JSON.parse(data);
-                jsondata.push(user)
-                push = jsondata
-            } catch (err) {
-                console.error(err)
-            }
-
-            fs.writeFile("./products/data/users.json", JSON.stringify(push, null, 4), err => {
-                if (err) {
-                    console.log(err.message)
-                } else {
-                    console.log('File successfully written!')
-                }
-            })  
-            console.log("User added successfully")        
+            let salt = bcrypt.genSaltSync(10)
+            let hashedPassword = bcrypt.hashSync(user.password , salt)
+            user.password = hashedPassword
+            await User.create(user)
+            console.log("User added successfully", user)      
         } catch (err) {
             console.error(err.message)
         }
+    }
+}
+
+async function searchUser(inputuser) {
+    try {
+        if (await User.findOne({email : inputuser.email}) === null) {
+            console.log("No user found, head to register")
+            return 0
+        }
+        if (await User.findOne({email : inputuser.email}) !== null){
+            console.log("User found! You can login!")
+            return 1
+        }
+    } catch (err) {
+        console.error(err)
     }
 }
