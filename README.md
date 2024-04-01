@@ -25,7 +25,7 @@ npm run server
 1. ExpressJS
 1. NodeJS
 
-![MEN stack](menstackcropped.png)
+![MEN Stack](menstackcropped.png)
 
 _~~(No link available as the backend is being developed.)~~_  
 [URL available. Click here to visit.](https://dripanime.onrender.com)
