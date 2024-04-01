@@ -142,17 +142,16 @@
                     Already our Customer?
                 </div>
                 <!-- FORM -->
-                <form action="/login" method="POST">
+                <form id="loginform">
                     <div class="register-form">
                         <!-- email V -->
                         <input autofocus id="login-email" name="email" type="text" placeholder="Email ID" required>
                         <!-- password V -->
-                        <input id="login-password" name="password" type="password" minlength="8"
-                            placeholder="Password (shushhh)" required>
+                        <input id="login-password" name="password" type="password" minlength="8" autocomplete="on" placeholder="Password (shushhh)" required>
+                        <!-- errorlogs V -->
+                        <div class="change" id="errorlog">ERR - User dosen't exist! Try again or head to signin.</div>
                         <!-- switch V -->
-                        <a href="/signin" id="cracc" class="change">New to DripAnime?? <span>Create new
-                                account.</span></a>
-
+                        <a href="/signin" id="cracc" class="change">New to DripAnime?? <span>Create new account.</span></a>
                         <!-- login button V  -->
                         <button type="submit" id="login-btn">Login</button>
                     </div>
@@ -204,5 +203,6 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script src="loginfunctions.js"></script>
 
 </html>

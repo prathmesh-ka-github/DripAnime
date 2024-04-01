@@ -83,27 +83,27 @@ app.use(express.static(__dirname + '/'));
     })
 
 //! POST METHODS
-    app.post('/signin',(req,res,next) => {
+    app.post('/signin', async (req,res,next) => {
         try {
             const user = req.body;
-            console.log("\"94, server.js\"", user )
-            if (checkUser(user)) {
-                console.log("User not found.")
-                console.log("Creating new user.")
-                addUser(user)
-                res.status(201)
-                res.redirect('/login')
-            }
-            else {
-                console.log(checkUser(user))
-                console.log("ERR - user found")
-                // res.redirect('/signin')
-                // 400 - Bad request. Error from client side.
-                res.status(400).json({
-                    "err":"User already exists, go to login.",
-                    "code":400
-                })
-            }
+            let result = await checkUser(user)
+            console.log("result =",result)
+                if(result) {
+                    console.log("User not found.")
+                    console.log("Creating new user.")
+                    addUser(user)
+                    res.status(201)
+                    res.redirect('/login')
+                }
+                else {
+                    console.log("ERR - user found")
+                    // res.redirect('/signin')
+                    // 400 - Bad request. Error from client side.
+                    res.status(400).json({
+                        "err":"User already exists, go to login.",
+                        "code":400
+                    })
+                }
             next();
         } catch (error) {
             console.error(error);
@@ -113,8 +113,15 @@ app.use(express.static(__dirname + '/'));
     app.post('/login', async(req,res,next) => {
         const user = req.body;
         console.log(user)
-        let a = await searchUser(user);
-        res.json(a) 
+        if (await searchUser(user)) {
+            console.log("successfully logged in!")
+        } else {
+            res.status(400).json({
+                "err":"User dosen't exist, go to register.",
+                "code":400
+            })
+        }
+        res.json(await searchUser(user))
         res.status(200)
         // res.redirect('/')
         next();
@@ -130,15 +137,16 @@ app.listen(port,() => {
 //! === === Functions === === 
 
 async function checkUser(inputuser) {
-    let check = 0
     try {
         if (await User.findOne({email : inputuser.email}) !== null) {
-            check = 1
+            return 0
+        }
+        else {
+            return 1
         }
     } catch (err) {
         console.error(err)
     }
-    return check
 }
 
 async function addUser(user) {
@@ -157,11 +165,11 @@ async function addUser(user) {
 
 async function searchUser(inputuser) {
     try {
-        if (await User.findOne({email : inputuser.email}) === null) {
+        if (await User.findOne({email : inputuser.email}) == null) {
             console.log("No user found, head to register")
             return 0
         }
-        if (await User.findOne({email : inputuser.email}) !== null){
+        else if (await User.findOne({email : inputuser.email}) !== null){
             console.log("User found! You can login!")
             return 1
         }
