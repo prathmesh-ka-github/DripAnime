@@ -45,15 +45,18 @@ form {
     cursor: pointer;
 }
 .visible {
-    display: block !important;
+    opacity: 1 !important;
 }
 #errorlog {
-    display: none;
-    font-size: 15px;
+    opacity: 0;
     margin: 0;
+    font-size: 15px;
     color: red;
 }
+
 .change {
+    transition: opacity 500ms;
+    transition-timing-function: ease-in-out;
     margin: 10px 0px;
     font-weight: 500;
     cursor: default;

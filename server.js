@@ -69,9 +69,6 @@ app.use(express.static(__dirname + '/'));
             res.sendFile( __dirname + '/hoodie.html')
         })
 
-
-
-
     //! -------------- Fetching users -----------------------
     app.get('/users', async (req,res) => {
         try {
@@ -82,7 +79,7 @@ app.use(express.static(__dirname + '/'));
         }
     })
 
-//! POST METHODS
+//! --------------------POST METHODS--------------------------
     app.post('/signin', async (req,res,next) => {
         try {
             const user = req.body;
@@ -121,7 +118,6 @@ app.use(express.static(__dirname + '/'));
                 "code":400
             })
         }
-        res.json(await searchUser(user))
         res.status(200)
         // res.redirect('/')
         next();

@@ -19,6 +19,10 @@ loginForm.addEventListener('submit', submit => {
                 if (data.err) {
                     var errorlog = document.getElementById("errorlog")
                     errorlog.classList.add('visible')
+                    function fadein() {
+                        errorlog.classList.remove('visible')
+                    }
+                    setTimeout(fadein, 10000);
                 }
             })
         }
