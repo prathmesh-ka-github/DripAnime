@@ -55,7 +55,7 @@ form {
 }
 
 .change {
-    transition: opacity 500ms;
+    transition: opacity 300ms;
     transition-timing-function: ease-in-out;
     margin: 10px 0px;
     font-weight: 500;

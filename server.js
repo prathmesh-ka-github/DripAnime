@@ -84,10 +84,9 @@ app.use(express.static(__dirname + '/'));
         try {
             const user = req.body;
             let result = await checkUser(user)
-            console.log("result =",result)
                 if(result) {
-                    console.log("User not found.")
-                    console.log("Creating new user.")
+                    user.token = "none"
+                    console.log("User not found...Creating new user.")
                     addUser(user)
                     res.status(201)
                     res.redirect('/login')

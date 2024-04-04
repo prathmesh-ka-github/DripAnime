@@ -124,76 +124,76 @@
 //     }
 // })
 
-const placeholder= {
-    "username":"bakati",
-    "email":"bhaktibhatt@outlook.com",
-    "phonenumber":"7345968514",
-    "password":"bhaktichapassword"
-}
+// const placeholder= {
+//     "username":"bakati",
+//     "email":"bhaktibhatt@outlook.com",
+//     "phonenumber":"7345968514",
+//     "password":"bhaktichapassword"
+// }
 
 
-const fs = require('fs')
-let jsonusers
+// const fs = require('fs')
+// let jsonusers
 
-const input =    {
-    "username":"bakati",
-    "email": "vishallavangare@outlook.com",
-    "phonenumber":"7345968514",
-    "password":"bhaktichapassword"
-}
+// const input =    {
+//     "username":"bakati",
+//     "email": "vishallavangare@outlook.com",
+//     "phonenumber":"7345968514",
+//     "password":"bhaktichapassword"
+// }
 
-try {
-    const users = fs.readFileSync('./products/data/testdata.json', 'utf-8');
-    jsonusers = JSON.parse(users);
-} catch (err) {
-    console.error(err)
-}
+// try {
+//     const users = fs.readFileSync('./products/data/testdata.json', 'utf-8');
+//     jsonusers = JSON.parse(users);
+// } catch (err) {
+//     console.error(err)
+// }
 
-function checkUser(inputuser) {
-    let jsondata
-    let check = 0
-    try {
-        const data = fs.readFileSync('./products/data/users.json', 'utf-8');
-        jsondata = JSON.parse(data);
-        jsondata.forEach(user => {
-            if(inputuser.email === user.email) {
-                check = 1
-            }
-        });
-    } catch (err) {
-        console.error(err)
-    }
+// function checkUser(inputuser) {
+//     let jsondata
+//     let check = 0
+//     try {
+//         const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+//         jsondata = JSON.parse(data);
+//         jsondata.forEach(user => {
+//             if(inputuser.email === user.email) {
+//                 check = 1
+//             }
+//         });
+//     } catch (err) {
+//         console.error(err)
+//     }
     
-    if (check ==0) {
-        return 0
-    }
-    if(check == 1) {
-        return 1
-    }
-}
+//     if (check ==0) {
+//         return 0
+//     }
+//     if(check == 1) {
+//         return 1
+//     }
+// }
 
-function addUser(user) {
-    let push = []
-    if (user.username !=="" & user.email !=="" & user.phonenumber !=="" & user.password !=="") {
-        try {
-            try {
-                const data = fs.readFileSync('./products/data/users.json', 'utf-8');
-                const jsondata = JSON.parse(data);
-                jsondata.push(user)
-                push = jsondata
-            } catch (err) {
-                console.error(err)
-            }
-            fs.writeFile("./products/data/users.json", JSON.stringify(push, null, 4), err => {
-                if (err) {
-                    console.log(err.message)
-                } else {
-                    console.log('File successfully written!')
-                }
-            })  
-            console.log("User added successfully")        
-        } catch (err) {
-            console.error(err.message)
-        }
-    }
-}
+// function addUser(user) {
+//     let push = []
+//     if (user.username !=="" & user.email !=="" & user.phonenumber !=="" & user.password !=="") {
+//         try {
+//             try {
+//                 const data = fs.readFileSync('./products/data/users.json', 'utf-8');
+//                 const jsondata = JSON.parse(data);
+//                 jsondata.push(user)
+//                 push = jsondata
+//             } catch (err) {
+//                 console.error(err)
+//             }
+//             fs.writeFile("./products/data/users.json", JSON.stringify(push, null, 4), err => {
+//                 if (err) {
+//                     console.log(err.message)
+//                 } else {
+//                     console.log('File successfully written!')
+//                 }
+//             })  
+//             console.log("User added successfully")        
+//         } catch (err) {
+//             console.error(err.message)
+//         }
+//     }
+// }

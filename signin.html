@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DripAnime - </title>
+    <title>DripAnime - Signin</title>
 
     <link rel="shortcut icon" href="Assets/favicon.png" type="image/x-icon">
 
@@ -153,7 +153,7 @@
                         <!-- email V -->
                         <input name="email" type="email" placeholder="Email ID" required>
                         <!-- Phone number V -->
-                        <input name="phonenumber" type="tel"  minlength="10" maxlength="10" placeholder="Phone number" required>
+                        <input name="phonenumber" type="tel"  minlength="10" maxlength="10" pattern="^[0-9]{10,10}$" title="Enter your Phone number" placeholder="Phone number" required>
                         <!-- Password V -->
                         <input name="password" autocomplete="on" type="password" minlength="8" placeholder="Password (shushhh)" required>
                         <div class="change" id="errorlog">ERR - User already exists! Try again or head to login.</div>
