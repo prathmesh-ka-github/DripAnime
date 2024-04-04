@@ -1,6 +1,7 @@
 const fs = require("fs")
 const express = require("express");
 var bcrypt = require("bcryptjs");
+var jwt = require('jsonwebtoken');
 const app = express();
 const port = 3000;
 
@@ -72,7 +73,19 @@ app.use(express.static(__dirname + '/'));
     //! -------------- Fetching users -----------------------
     app.get('/users', async (req,res) => {
         try {
-            let data = await User.find()
+            let data = await User.find({}, {_id : true})
+            res.status(200).json(data);
+        } catch (err) {
+            console.error(err)
+        }
+    })
+
+    // ! ----------------Private Routes--------------------------
+    app.get('/profiles', (req, res)=> {
+        try {
+            let data = {
+                data : "User Profile!"
+            }
             res.status(200).json(data);
         } catch (err) {
             console.error(err)
@@ -96,7 +109,7 @@ app.use(express.static(__dirname + '/'));
                     // res.redirect('/signin')
                     // 400 - Bad request. Error from client side.
                     res.status(400).json({
-                        "err":"User already exists, go to login.",
+                        "err":"ERR - User already exists! Try again or head to login.",
                         "code":400
                     })
                 }
@@ -108,12 +121,27 @@ app.use(express.static(__dirname + '/'));
 
     app.post('/login', async(req,res,next) => {
         const user = req.body;
-        console.log(user)
+        // console.log(user)
         if (await searchUser(user)) {
-            console.log("successfully logged in!")
+            try {
+                const dbuser = await User.findOne({email : user.email})
+                let checkpass = bcrypt.compareSync(user.password, dbuser.password)
+                if (checkpass) {
+                    var token = jwt.sign({id : dbuser._id}, 'secretkey');
+                    await User.updateOne({email: user.email}, {$set:{token: token}})
+                    console.log("successfully logged in!")
+                } else {
+                    res.status(401).json({
+                        "err":"ERR - Invalid Credentials! Try again or head to signin.",
+                        "code":401
+                    })
+                }
+            } catch (err) {
+                console.log(err)
+            }
         } else {
             res.status(400).json({
-                "err":"User dosen't exist, go to register.",
+                "err":"ERR - Invalid Credentials! Try again or head to signin.",
                 "code":400
             })
         }
@@ -161,11 +189,9 @@ async function addUser(user) {
 async function searchUser(inputuser) {
     try {
         if (await User.findOne({email : inputuser.email}) == null) {
-            console.log("No user found, head to register")
             return 0
         }
         else if (await User.findOne({email : inputuser.email}) !== null){
-            console.log("User found! You can login!")
             return 1
         }
     } catch (err) {

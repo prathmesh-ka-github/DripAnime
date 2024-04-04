@@ -18,6 +18,7 @@ loginForm.addEventListener('submit', submit => {
                 console.log(data);
                 if (data.err) {
                     var errorlog = document.getElementById("errorlog")
+                    errorlog.innerHTML = data.err
                     errorlog.classList.add('visible')
                     function fadein() {
                         errorlog.classList.remove('visible')
