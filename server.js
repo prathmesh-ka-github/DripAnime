@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended : false}));
 
 app.use(express.static(__dirname + '/'));
 
-//! ALL GET ENDPOINTS!!!
+//! ALL GET ENDPOINTS
     //? NAVBAR
         app.get('/',(req, res) => {
             // res.writeHead(200,{ 'Content-Type':'html' })
@@ -23,9 +23,9 @@ app.use(express.static(__dirname + '/'));
             res.sendFile( __dirname + '/index.html')
         })
 
-        app.get('/home', (req,res) => {
+        app.get('/error', (req,res) => {
             res.status(200)
-            res.sendFile( __dirname + '/index.html')
+            res.sendFile( __dirname + '/error.html')
         })
 
         app.get('/apparels', (req,res) => {
@@ -70,7 +70,7 @@ app.use(express.static(__dirname + '/'));
             res.sendFile( __dirname + '/hoodie.html')
         })
 
-    //! -------------- Fetching users -----------------------
+    //! -------------------------- Fetching users -------------------------------------
     app.get('/users', async (req,res) => {
         try {
             let data = await User.find({}, {_id : true})
@@ -80,7 +80,7 @@ app.use(express.static(__dirname + '/'));
         }
     })
 
-    // ! ----------------Private Routes--------------------------
+    // ! --------------------------Private Routes------------------------------------
     app.get('/profiles', (req, res)=> {
         try {
             let data = {
@@ -92,27 +92,27 @@ app.use(express.static(__dirname + '/'));
         }
     })
 
-//! --------------------POST METHODS--------------------------
+//! ------------------------------POST METHODS------------------------------------
     app.post('/signin', async (req,res,next) => {
         try {
             const user = req.body;
             let result = await checkUser(user)
-                if(result) {
-                    user.token = "none"
-                    console.log("User not found...Creating new user.")
-                    addUser(user)
-                    res.status(201)
-                    res.redirect('/login')
-                }
-                else {
-                    console.log("ERR - user found")
-                    // res.redirect('/signin')
-                    // 400 - Bad request. Error from client side.
-                    res.status(400).json({
-                        "err":"ERR - User already exists! Try again or head to login.",
-                        "code":400
-                    })
-                }
+            if(result) {
+                user.token = "none"
+                console.log("User not found...Creating new user.")
+                addUser(user)
+                res.status(201)
+                res.redirect('/login')
+            }
+            else {
+                console.log("ERR - user found")
+                // res.redirect('/signin')
+                // 400 - Bad request. Error from client side.
+                res.status(400).json({
+                    "err":"ERR - User already exists! Try again or head to login.",
+                    "code":400
+                })
+            }
             next();
         } catch (error) {
             console.error(error);
@@ -130,6 +130,8 @@ app.use(express.static(__dirname + '/'));
                     var token = jwt.sign({id : dbuser._id}, 'secretkey');
                     await User.updateOne({email: user.email}, {$set:{token: token}})
                     console.log("successfully logged in!")
+                    res.status(200)
+                    res.redirect('/')
                 } else {
                     res.status(401).json({
                         "err":"ERR - Invalid Credentials! Try again or head to signin.",
@@ -145,8 +147,7 @@ app.use(express.static(__dirname + '/'));
                 "code":400
             })
         }
-        res.status(200)
-        // res.redirect('/')
+        
         next();
     })
 
@@ -156,6 +157,11 @@ app.use(express.static(__dirname + '/'));
 app.listen(port,() => {
     console.log(`Listening to http://localhost:${port}/`)
 })
+
+
+
+
+
 
 //! === === Functions === === 
 
