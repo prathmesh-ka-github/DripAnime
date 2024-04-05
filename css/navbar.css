@@ -104,7 +104,7 @@
     transition: all 900ms;
     max-height: 0;
     margin-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 10px !important;
     position: sticky;
     top: 80px;
     background-color: white;
@@ -113,7 +113,7 @@
 }
 .hamlink{
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
     margin-left: 30px;
     font-size: 20px;
@@ -127,7 +127,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     align-items: center;
 }
 .more img{

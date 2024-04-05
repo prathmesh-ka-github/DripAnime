@@ -7,7 +7,8 @@ const port = 3000;
 
 //? MONGODB CONNECTION
 const mongoose = require("mongoose")
-const User = require("./userModal")
+const User = require("./userModal");
+const { error } = require("console");
 mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/DripanimeDB")
 
 app.use(express.json())
@@ -54,9 +55,8 @@ app.use(express.static(__dirname + '/'));
             res.status(200)
             res.sendFile( __dirname + '/signin.html')
         })
-        app.get('/profile',(req, res)=> {
-            res.status(200)
-            res.sendFile(__dirname + '/profile.html')
+        app.get('/shopping-cart',(req, res) => {
+            res.redirect('/login')
         })
 
     //?  MAIN AREA OF INDEX
@@ -81,7 +81,7 @@ app.use(express.static(__dirname + '/'));
     })
 
     // ! --------------------------Private Routes------------------------------------
-    app.get('/profiles', (req, res)=> {
+    app.get('/profile', (req, res)=> {
         try {
             let data = {
                 data : "User Profile!"
@@ -130,15 +130,16 @@ app.use(express.static(__dirname + '/'));
                     var token = jwt.sign({id : dbuser._id}, 'secretkey');
                     await User.updateOne({email: user.email}, {$set:{token: token}})
                     console.log("successfully logged in!")
-                    res.status(200)
                     res.redirect('/')
-                } else {
-                    res.status(401).json({
-                        "err":"ERR - Invalid Credentials! Try again or head to signin.",
-                        "code":401
-                    })
+                }
+                else {
+                    throw "Invalid credentials. Wrong password."
                 }
             } catch (err) {
+                res.status(401).json({
+                    "err":"ERR - Invalid Credentials! Try again or head to signin.",
+                    "code":401
+                })
                 console.log(err)
             }
         } else {
@@ -147,7 +148,6 @@ app.use(express.static(__dirname + '/'));
                 "code":400
             })
         }
-        
         next();
     })
 

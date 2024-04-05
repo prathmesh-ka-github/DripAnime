@@ -98,7 +98,9 @@
                 </a>
             </div>
             <div class="rightlink">
-                <img src="./Assets/cart.png" alt="shopping cart">
+                <a href="/shopping-cart">
+                    <img src="./Assets/cart.png" alt="shopping cart">
+                </a>
             </div>
             <div class="rightlink">
                 <a href="./login">
@@ -112,27 +114,29 @@
     </div>
     <div class="ham-contents" id="ham-contents">
         <div class="hamlink">
-            <a href="./apparels">
+            <a href="/apparels">
                 Apparels
             </a>
         </div>
         <div class="hamlink">
-            <a href="./anime">
+            <a href="/anime">
                 Anime
             </a>
         </div>
         <div class="hamlink">
-            <a href="./support">
+            <a href="/support">
                 Support
             </a>
         </div>
         <div class="more-container hamlink">
             <div class="more">
-                <a href="./search">
+                <a href="/search">
                     <img src="./Assets/icons8-search-60.png" alt="search">
                 </a>
-                <img id="cart" src="./Assets/cart.png" alt="cart">
-                <a href="./login">
+                <a href="/shopping-cart">
+                    <img id="cart" src="./Assets/cart.png" alt="cart">
+                </a>
+                <a href="/login">
                     <img src="./Assets/account.png" alt="account">
                 </a>
             </div>
@@ -255,7 +259,7 @@
 
     <!-- Main container -->
     <div class="main">
-        <div class="product-main-container"  data-aos="fade-up" data-aos-duration="1200"> 
+        <div class="product-main-container"  data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out"> 
             <div class="product-main-description">
                 <div class="product-main-header">
                     Premium Anime T-Shirts
@@ -273,7 +277,7 @@
             </div>
         </div>
 
-        <div class="product-main-container column-rev "  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1200">
+        <div class="product-main-container column-rev "  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="500" data-aos-easing="ease-in-out">
             <div class="product-photo">
                 <img class="product-photo-img" src="Assets/gojo-hoodie.png" alt="">
             </div>
@@ -291,7 +295,7 @@
             </div>
         </div>
 
-        <div class="product-main-container "  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1200">
+        <div class="product-main-container "  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="500" data-aos-easing="ease-in-out">
             <div class="product-main-description">
                 <div class="product-main-header">
                     Premium Anime Jackets
@@ -307,7 +311,7 @@
             </div>
         </div>
 
-        <div class="product-main-container column-rev"  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1200">
+        <div class="product-main-container column-rev"  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="500" data-aos-easing="ease-in-out">
             <div class="product-photo">
                 <img class="product-photo-img" src="Assets/Dabit-o-tshirt.png" alt="">
             </div>
@@ -323,7 +327,7 @@
             </div>
         </div>
 
-        <div class="product-main-container "  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1200">
+        <div class="product-main-container "  data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="500" data-aos-easing="ease-in-out">
             <div class="product-main-description">
                 <div class="product-main-header">
                     Full Sleeve Anime T-Shirts
@@ -340,6 +344,11 @@
         </div>
     </div>
     
+    <div id="notify" class="notification-container">
+        Successfully Logged in ✅
+    </div>
+
+
     <!-- footer -->
     <div class="footer-container">
         <div class="footer-links-container">
@@ -409,5 +418,23 @@
 <!-- Aos JS -->
 <script src="aos.js"></script>
 <script type="text/javascript">AOS.init();</script>
+
+<script defer>
+    if (localStorage.getItem("login") == null) {
+        console.log("No login detected")
+    } else {
+        console.log("login detected")
+        localStorage.removeItem("login")
+
+        const notification = document.getElementById("notify")
+        function notify() {
+            notification.classList.add("shownoti")
+            setTimeout(() => {
+                notification.classList.remove("shownoti")
+            }, 7000);
+        }
+        notify()
+    }
+</script>
 
 </html>

@@ -12,8 +12,10 @@ loginForm.addEventListener('submit', submit => {
             "Content-Type":"Application/JSON"
         },
         "body": stringFormData
-    }).then(res => {
+    })
+    .then(res => {
         if (!res.ok) {
+            // ! Throws error
             res.json().then(data => {
                 console.log(data);
                 if (data.err) {
@@ -28,6 +30,7 @@ loginForm.addEventListener('submit', submit => {
             })
         }
         else {
+            localStorage.setItem("login","success")
             window.location.replace("/")
         }
     })

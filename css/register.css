@@ -33,7 +33,7 @@
 form {
     width: 80%;
 }
-.register-form input:not(.chkbk){
+.register-form input{
     all: unset;
     background-color: #e8e8e8;
     margin: 5px;
@@ -86,4 +86,25 @@ form {
 }
 .gayab {
     display: none;
+}
+
+@media only screen and (max-width:900px){
+    .register-main{
+        padding: 50px 20px;
+    }
+    .register-container {
+        width: 100%;
+    }
+    .register-headers{
+        padding: 10px;
+    }
+    .register-form input{
+        width: 100%;
+    }
+    .main-containers {
+        width: 100%;
+    }
+    form {
+        width: 100%;
+    }
 }

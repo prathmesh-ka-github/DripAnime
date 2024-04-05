@@ -158,6 +158,34 @@
     transition: translate 500ms;
 }
 
+.notification-container {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    font-size: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px black solid;
+}
+
+.shownoti {
+    display: flex !important;
+    animation: slidein 800ms linear !important;
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0.5;
+        right: -500px;
+    }
+    to {
+        opacity: 1;
+        right: 20px;
+    }
+}
+
 @media only screen and (max-width:900px){
     /* carousel */
     .carousel-inner {
