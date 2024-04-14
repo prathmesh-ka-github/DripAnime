@@ -1,19 +1,19 @@
-const fs = require("fs")
-const express = require("express");
-var bcrypt = require("bcryptjs");
-var jwt = require('jsonwebtoken');
+const express = require("express")
+var bcrypt = require("bcryptjs")
+var jwt = require('jsonwebtoken')
+
 const app = express();
 const port = 3000;
 
+
 //? MONGODB CONNECTION
 const mongoose = require("mongoose")
-const User = require("./userModal");
-const { error } = require("console");
+const { error } = require("console")
 mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/DripanimeDB")
+const User = require("./userModal")
 
 app.use(express.json())
 app.use(express.urlencoded({extended : false}));
-
 app.use(express.static(__dirname + '/'));
 
 //! ALL GET ENDPOINTS
@@ -92,7 +92,7 @@ app.use(express.static(__dirname + '/'));
         }
     })
 
-//! ------------------------------POST METHODS------------------------------------
+//! ------------------------------POST METHODS---------------------------------------
     app.post('/signin', async (req,res,next) => {
         try {
             const user = req.body;
@@ -153,10 +153,14 @@ app.use(express.static(__dirname + '/'));
 
 
 
+
+
 //! LISTEN
 app.listen(port,() => {
     console.log(`Listening to http://localhost:${port}/`)
 })
+
+
 
 
 
