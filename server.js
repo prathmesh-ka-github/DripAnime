@@ -11,6 +11,7 @@ const mongoose = require("mongoose")
 const { error } = require("console")
 mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/DripanimeDB")
 const User = require("./userModal")
+const Tshirts = require("./tshirtsModal")
 
 app.use(express.json())
 app.use(express.urlencoded({extended : false}));
@@ -80,6 +81,17 @@ app.use(express.static(__dirname + '/'));
         }
     })
 
+    app.get('/products/tshirts', async(req, res) => {
+        try {
+            let data = await Tshirts.find({},{name:true})
+            res.status(200).json(data)
+        } catch (err) {
+            console.error(err);
+            
+        }
+    })
+
+
     // ! --------------------------Private Routes------------------------------------
     app.get('/profile', (req, res)=> {
         try {
@@ -133,7 +145,7 @@ app.use(express.static(__dirname + '/'));
                     res.redirect('/')
                 }
                 else {
-                    throw "Invalid credentials. Wrong password."
+                    throw "ERR - Invalid credentials. Wrong password."
                 }
             } catch (err) {
                 res.status(401).json({

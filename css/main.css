@@ -165,7 +165,8 @@
     right: 20px;
     font-size: 30px;
     padding: 15px;
-    background-color: white;
+    background-color: #0096C7;
+    color: white;
     border-radius: 10px;
     border: 1px black solid;
 }

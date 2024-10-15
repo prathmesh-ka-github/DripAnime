@@ -16,31 +16,31 @@ const userCardTemplate = document.querySelector("[data-user-template]")
 const searchResult = document.querySelector("[search-results]")
 const searchInput = document.querySelector("[data-search]")
 
-let users = []
-let husers = []
+let tshirts = []
+let hoodies = []
 
 //! Searching and displaying the search results
 searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase()
     // For tshirts
     if (value !== "") {
-        users.forEach(user => {
+        tshirts.forEach(user => {
             const isVisible = user.name.toLowerCase().includes(value) || user.tags.toLowerCase().includes(value)
             user.element.classList.toggle("hide", !isVisible)
         })
     }
     // For hoodies
     if (value !== "") {
-        husers.forEach(huser => {
+        hoodies.forEach(huser => {
             const ishVisible = huser.hname.toLowerCase().includes(value) || huser.htags.toLowerCase().includes(value)
             huser.helement.classList.toggle("hide", !ishVisible)
         })
     }
     else if (value == "") {
-        users.forEach(user => {
+        tshirts.forEach(user => {
             user.element.classList.add("hide")
         })
-        husers.forEach(huser => {
+        hoodies.forEach(huser => {
             huser.helement.classList.add("hide")
         })
     }
@@ -51,7 +51,7 @@ searchInput.addEventListener("input", (e) => {
 fetch('./products/data/products.json')
     .then((response) => response.json())
     .then(data => {
-        users = data.tshirt.map(product => {
+        tshirts = data.tshirt.map(product => {
             const card = userCardTemplate.content.cloneNode(true).children[0]
             const productImage = card.querySelector("[product-image]")
             const header = card.querySelector('[data-name]')
@@ -67,7 +67,7 @@ fetch('./products/data/products.json')
 fetch('./products/data/products.json')
     .then((hresponse) => hresponse.json())
     .then(hdata => {
-        husers = hdata.hoodie.map(hoodie => {
+        hoodies = hdata.hoodie.map(hoodie => {
             const card = userCardTemplate.content.cloneNode(true).children[0]
             const productImage = card.querySelector("[product-image]")
             const header = card.querySelector('[data-name]')
