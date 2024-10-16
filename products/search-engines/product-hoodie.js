@@ -15,7 +15,7 @@ fetch('./products/data/products.json')
         const imgurl = product.url
         productImage.innerHTML = `<img src="./products/images/${imgurl}.png" alt="${imgurl}">`
         header.textContent = product.name
-        card.href=`/product?${product.id}`
+        card.href=`/product?id=${product.id}`
         console.log(card)
         searchResult.append(card)
         return{name:product.name, tags:product.tags, element:card}

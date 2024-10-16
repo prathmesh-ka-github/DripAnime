@@ -59,8 +59,8 @@ fetch('./products/data/products.json')
             const imgurl = product.url
             productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
             header.textContent = product.name
-            card.href=`/product?${product.id}`
-            // console.log(card)
+            card.href=`/product?id=${product.id}`
+            console.log(card)
             searchResult.append(card)
             return { name: product.name, tags: product.tags, element: card }
         });
@@ -77,7 +77,7 @@ fetch('./products/data/products.json')
             const imgurl = hoodie.url
             productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
             header.textContent = hoodie.name
-            card.href=`/product?${hoodie.id}`
+            card.href=`/product?id=${hoodie.id}`
             console.log(card)
             searchResult.append(card)
             return { hname: hoodie.name, htags: hoodie.tags, helement: card }

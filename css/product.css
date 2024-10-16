@@ -1,15 +1,17 @@
 .productdesc-container {
     display: flex;
-    min-height: 600px;
     justify-content: space-evenly;
+    margin: 50px 0px;
     flex-wrap: wrap;
-    align-content: center;
 }
 
 .productimg {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.productimg img {
+    height: 600px;
 }
 
 .productdesc {
@@ -19,6 +21,7 @@
     justify-content: center;
     align-items: flex-start;
     width: 600px;
+    margin-top: 50px;
 }
 
 .productheading {

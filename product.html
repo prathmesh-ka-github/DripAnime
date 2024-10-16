@@ -136,8 +136,8 @@
     </div>
 
     <div class="productdesc-container">
-        <div class="productimg" id="productimg">
-            <img src="products/images/Eren-hoodie.png" alt="">
+        <div class="productimg">
+            <img id="productimg" src="products/images/Eren-hoodie.png" alt="">
         </div>
         <div class="productdesc">
             <div class="productheading" id="productname">Product Name</div>
@@ -145,8 +145,8 @@
         
             <div class="productprice" id="productprice">RS 899/-</div>
             <div class="productbuttons">
-                <button>Add to Shopping Cart</button>
-                <button>Add to Wishlist</button>
+                <button onclick="addtocart()">Add to Shopping Cart</button>
+                <button onclick="addtowishlist()">Add to Wishlist</button>
             </div>
         </div>
     </div>
@@ -195,4 +195,5 @@
     
 </body>
     <script src="../script.js"></script>
+    <script src="./product.js"></script>
 </html>
