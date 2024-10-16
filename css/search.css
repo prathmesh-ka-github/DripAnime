@@ -3,7 +3,6 @@
 }
 .searchbar-container{
     display: flex;
-    width: 100%;
     flex-direction: column;
     align-items: center;
     padding: 50px;
@@ -48,6 +47,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .name {
     font-size: 30px;

@@ -5,6 +5,7 @@
     //TODO Now adding products
     //TODO Rendering tshirts in tshirt section
     //TODO Rendering hoodies in hoodies section 
+    TODO Implement add to cart functionality.
     TODO Collect and make content jackets, full sleeves and oversized tshirt sections.
     TODO Rendering Jackets in Jackets section
     TODO Rendering Full sleeve Tshirt in Full sleeve Tshirt section.
@@ -58,6 +59,8 @@ fetch('./products/data/products.json')
             const imgurl = product.url
             productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
             header.textContent = product.name
+            card.href=`/product?${product.id}`
+            // console.log(card)
             searchResult.append(card)
             return { name: product.name, tags: product.tags, element: card }
         });
@@ -74,6 +77,8 @@ fetch('./products/data/products.json')
             const imgurl = hoodie.url
             productImage.innerHTML = `<img src="products/images/${imgurl}.png" alt="${imgurl}">`
             header.textContent = hoodie.name
+            card.href=`/product?${hoodie.id}`
+            console.log(card)
             searchResult.append(card)
             return { hname: hoodie.name, htags: hoodie.tags, helement: card }
         });

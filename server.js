@@ -59,6 +59,11 @@ app.use(express.static(__dirname + '/'));
         app.get('/shopping-cart',(req, res) => {
             res.redirect('/login')
         })
+        app.get('/product', (req,res) => {
+            res.status(200)
+            res.sendFile( __dirname + '/product.html')
+        })
+        
 
     //?  MAIN AREA OF INDEX
         app.get('/product-tshirts', (req,res) => {
