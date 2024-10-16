@@ -3,12 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px;
-    height: 40px;
+    margin: 5px 0px;
+    height: 25px;
     background-color: #0096C7;
 }
 .ribbon-txt{
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     font-weight: 300;
 }
@@ -16,7 +16,7 @@
 .navbar-container {
     display: flex;
     width: 100%;
-    height: 80px;
+    height: 50px;
     background-color: #F0F0F0;
     justify-content: space-between;
     position: -webkit-sticky;
@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 .logo-pic {
-    width: 60px;
+    width: 30px;
 }
 .links-container-wrap{
     width: 100%;
@@ -42,12 +42,12 @@
 
 .links-container {
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     align-items: center;
     width: 40%;
     justify-content: center;
     position: absolute;
-    height: 80px;
+    height: 50px;
     z-index: 0;
 }
 .links-container a{
@@ -68,9 +68,9 @@
 .rightnav {
     display: flex;
     align-items: center;
-    width: 15%;
+    width: 12%;
     justify-content: space-around;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .rightlink{
     margin: 0;
@@ -79,10 +79,10 @@
 
 }
 .rightlink img {
-    width: 40px;
+    width: 30px;
     height: auto;
     cursor: pointer;
-    margin: 10px;
+    margin: 5px;
 }
 .rightlink:hover{
     border-bottom: 3px #0096C7 solid;

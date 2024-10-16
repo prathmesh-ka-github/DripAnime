@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DripAnime - Product</title>
+    <title>DripAnime - Shopping cart</title>
 
     <link rel="shortcut icon" href="Assets/favicon.png" type="image/x-icon">
 
@@ -16,8 +16,8 @@
     <link rel="stylesheet" type="text/css" href="css/preloader.css">
 </head>
 <body>
-    <!-- Preloader container -->
-    <div class="loader-container-main">
+        <!-- Preloader container -->
+        <div class="loader-container-main">
             <div class="center">
                 <div class="center-cell">
                     <div class="prealoder_container">
@@ -135,21 +135,24 @@
             </div>
     </div>
 
-    <div class="productdesc-container">
-        <div class="productimg">
-            <img id="productimg" src="products/images/Eren-hoodie.png" alt="">
+
+    <div class="shoppingcartcontainer">
+        <div class="headershoppingcart">Shopping Cart</div>
+        <div class="cartitems">
+            
         </div>
-        <div class="productdesc">
-            <div class="productheading" id="productname">Product Name</div>
-            <div class="productabout" id="productdesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta obcaecati dolorem, velit porro nobis ullam error fugit esse hic consequatur! Incidunt illo distinctio sapiente aspernatur, vel eius architecto in! Iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ratione, possimus nemo assumenda sapiente fugiat reiciendis natus architecto, alias dolor distinctio velit quia saepe non repudiandae dolorum quam mollitia atque.</div>
-        
-            <div class="productprice" id="productprice">RS 899/-</div>
-            <div class="productbuttons">
-                <button onclick="addtocart()">Add to Shopping Cart</button>
-                <button onclick="addtowishlist()">Add to Wishlist</button>
-            </div>
-        </div>
+        <template data-user-template>
+            <a href="#" class="plate">
+                <div class="product-image" product-image>
+                    
+                </div>
+                <h1 class="name" data-name>
+                    
+                </h1>
+            </a>
+        </template>
     </div>
+
 
     <div class="footer-container">
         <div class="footer-links-container">

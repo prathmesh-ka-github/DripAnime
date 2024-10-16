@@ -17,6 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended : false}));
 app.use(express.static(__dirname + '/'));
 
+
 //! ALL GET ENDPOINTS
     //? NAVBAR
         app.get('/',(req, res) => {
@@ -57,7 +58,8 @@ app.use(express.static(__dirname + '/'));
             res.sendFile( __dirname + '/signin.html')
         })
         app.get('/shopping-cart',(req, res) => {
-            res.redirect('/login')
+            res.status(200)
+            res.sendFile( __dirname + '/shoppingcart.html')
         })
         app.get('/product', (req,res) => {
             res.status(200)
