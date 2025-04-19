@@ -31,6 +31,7 @@ loginForm.addEventListener('submit', submit => {
         }
         else {
             localStorage.setItem("login","success")
+            localStorage.setItem('userEmail',formData.email)
             window.location.replace("/")
         }
     })

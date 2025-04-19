@@ -87,6 +87,18 @@ app.use(express.static(__dirname + '/'));
             console.error(err)
         }
     })
+    app.post('/getuserdetails', async (req,res) => {
+        try {
+            console.log(req.body)
+            const useremail = req.body.useremail
+            // console.log('getuserdetails api called')
+            const user = await User.findOne({ email: useremail });
+            // console.log(user)
+            res.json(user)
+        } catch (err) {
+            console.error(err)
+        }
+    })
 
     app.get('/products/tshirts', async(req, res) => {
         try {
@@ -102,10 +114,8 @@ app.use(express.static(__dirname + '/'));
     // ! --------------------------Private Routes------------------------------------
     app.get('/profile', (req, res)=> {
         try {
-            let data = {
-                data : "User Profile!"
-            }
-            res.status(200).json(data);
+            res.status(200)
+            res.sendFile( __dirname + '/profile.html')
         } catch (err) {
             console.error(err)
         }

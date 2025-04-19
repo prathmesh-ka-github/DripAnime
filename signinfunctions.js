@@ -5,7 +5,8 @@ signupform.addEventListener('submit', submit => {
         "username" : signupform.username.value,
         "email" : signupform.email.value,
         "phonenumber" : signupform.phonenumber.value,
-        "password" : signupform.password.value
+        "password" : signupform.password.value,
+        "address" : signupform.address.value
     }
     stringFormData = JSON.stringify(formData)
     fetch("/signin", {

@@ -29,3 +29,15 @@ npm run server
 
 _~~(No link available as the backend is being developed.)~~_  
 [URL available. Click here to visit.](https://dripanime.onrender.com)
+
+## TODOs:
+1. Add related products to product page.
+1. Make an anime wise section just like apparel's section.
+1. Make an add to cart function and complete shopping cart page.
+    - Quantity
+    - Sizes
+    - Shipping info
+1. Upload profile photo to user page.
+1. Add card details to user page.
+1. make a to "top button" on home.
+1.
