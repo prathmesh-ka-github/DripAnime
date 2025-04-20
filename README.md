@@ -14,11 +14,15 @@ Now this project's Backend and Database is being hosted on a third-party website
 npm build server
 npm run server
 ```
+then the app will deploy on localhost with the port specified. You will get the feedback in your terminal.
+
+
 ### Dependancies -
-1.  express : ^4.18.2  
-1.  nodemon : ^2.0.22  
-1.  dotenv : ^16.4.5
-1.  mongoose : ^8.2.3
+1. express : ^4.18.2  
+1. nodemon : ^2.0.22  
+1. dotenv : ^16.4.5
+1. mongoose : ^8.2.3
+1. jsonwebtoken : ^9.0.2
 
 ## Tech stack used -
 1. MongoDB
@@ -33,7 +37,8 @@ _~~(No link available as the backend is being developed.)~~_
 ## TODOs:
 1. Add related products to the specific product page.
 1. Make an anime wise section just like apparel's section.
-1. Make an add to cart function and complete shopping cart page and wishlist page.
+1. Complete shopping cart page and wishlist(in profile) page.
+1. Make an add to cart function with form on product page including -
     - Quantity
     - Sizes
     - Shipping info
