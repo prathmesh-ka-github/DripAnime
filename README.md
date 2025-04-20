@@ -31,7 +31,7 @@ _~~(No link available as the backend is being developed.)~~_
 [URL available. Click here to visit.](https://dripanime.onrender.com)
 
 ## TODOs:
-1. Add related products to product page.
+1. Add related products to the specific product page.
 1. Make an anime wise section just like apparel's section.
 1. Make an add to cart function and complete shopping cart page and wishlist page.
     - Quantity
@@ -43,3 +43,4 @@ _~~(No link available as the backend is being developed.)~~_
 1. Make a edit profile function.
 1. Make a nodemailer automail for "welcome user" notification.
 1. Make a nodemailer automail for user with "order place!" notification.
+1. Add a popular pick section with a infinite carousel in main page.
