@@ -17,7 +17,7 @@
     justify-content: center;
 }
 .plate {
-    width: 600px;
+    width: 380px;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     font-size: 30px;
 }
 .product-image img{
-    width: 400px;
+    width: 300px;
     border-radius: 20px;
     transition: translate 500ms;
 }
