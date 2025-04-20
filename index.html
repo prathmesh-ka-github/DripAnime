@@ -426,11 +426,14 @@
         localStorage.removeItem("login")
 
         const notification = document.getElementById("notify")
-        function notify() {
+        async function notify() {
             notification.classList.add("shownoti")
-            setTimeout(() => {
+            notification.classList.remove("noshownoti")
+            await setTimeout(() => {
                 notification.classList.remove("shownoti")
-            }, 5000);
+                notification.classList.add("noshownoti")
+            }, 6000);
+            notification.classList.remove("noshownoti")
         }
         notify()
     }

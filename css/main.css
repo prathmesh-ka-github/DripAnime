@@ -173,7 +173,23 @@
 
 .shownoti {
     display: flex !important;
-    animation: slidein 800ms linear !important;
+    animation: slidein 800ms linear forwards !important;
+}
+.noshownoti {
+    display: flex !important;
+    animation: fadeout 700ms linear forwards !important;
+}
+
+@keyframes fadeout {
+    from {
+
+        opacity: 1;
+        right: 20px;
+    }
+    to {
+        opacity: 0;
+        right: -600px;
+    }
 }
 
 @keyframes slidein {
