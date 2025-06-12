@@ -1,4 +1,3 @@
-
 .ribbon {
     display: flex;
     justify-content: center;
@@ -7,7 +6,8 @@
     height: 25px;
     background-color: #0096C7;
 }
-.ribbon-txt{
+
+.ribbon-txt {
     font-size: 15px;
     color: white;
     font-weight: 300;
@@ -24,16 +24,19 @@
     top: 0;
     z-index: 3;
 }
-.logo{
+
+.logo {
     margin-left: 40px;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
+
 .logo-pic {
     width: 40px;
 }
-.links-container-wrap{
+
+.links-container-wrap {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -51,20 +54,25 @@
     height: 60px;
     z-index: 0;
 }
-.links-container a{
-    margin: 0px 40px;
+
+.links-container a {
+    margin: 0px 30px;
+    height: 70%;
 }
 
 .link {
     border-bottom: 3px transparent solid;
     transition: border-color 300ms;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    height: 100%;
 }
 
 .link:hover {
     cursor: pointer;
     border-bottom: 3px #0096C7 solid;
 }
-
 
 .rightnav {
     display: flex;
@@ -73,29 +81,38 @@
     justify-content: space-around;
     margin-right: 20px;
 }
-.rightlink{
+
+.rightlink {
     margin: 0;
     border-bottom: 3px transparent solid;
     transition: border-color 300ms;
-
 }
+
 .rightlink img {
     width: 30px;
     height: auto;
     cursor: pointer;
     margin: 5px;
 }
-.rightlink:hover{
+
+.rightlink:hover {
     border-bottom: 3px #0096C7 solid;
 }
+
 .nav-active {
     border-bottom: 3px #0096C7 solid;
     cursor: default;
-    margin: 0px 40px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    height: 70%;
+    margin-top: 3px;
 }
-.rightlink{
+
+.rightlink {
     margin: 0;
 }
+
 .ham-contents {
     /* max-height: 0; */
     overflow: hidden;
@@ -111,7 +128,8 @@
     z-index: 20;
     display: none;
 }
-.hamlink{
+
+.hamlink {
     display: flex;
     /* width: 100%; */
     padding: 10px;
@@ -119,10 +137,12 @@
     font-size: 20px;
     cursor: pointer;
 }
+
 .ham {
     display: none;
 }
-.ham img{
+
+.ham img {
     width: 30px;
 }
 
@@ -133,30 +153,37 @@
     /* margin-right: 20px; */
     align-items: center;
 }
-.more img{
+
+.more img {
     width: 30px;
     height: 30px;
     margin: 0px 3vw;
 }
+
 img#account {
     width: 35px;
     height: auto;
     margin-left: 2vw;
 }
-@media only screen and (max-width:900px){
+
+@media only screen and (max-width:900px) {
     .ribbon-txt {
         font-size: 10px;
         font-weight: 400;
     }
+
     .links-container {
         display: none;
     }
+
     .rightlink {
         display: none;
     }
+
     .ham {
         display: flex;
     }
+
     .ham-contents {
         display: flex;
         padding-top: 0px;
