@@ -25,7 +25,6 @@ function addUser() {
                 "phonenumber" : `${phonenumber}`,
                 "password" : `${password}`
             }
-
             try {
                 const data = fs.readFileSync('./products/data/testdata.json', 'utf-8');
                 const jsondata = JSON.parse(data);
@@ -36,7 +35,6 @@ function addUser() {
             } catch (err) {
                 console.error(err)
             }
-
             fs.writeFile("./products/data/testdata.json", JSON.stringify(push, null, 4), err => {
                 if (err) {
                     console.log(err.message)
@@ -44,8 +42,6 @@ function addUser() {
                     console.log('File successfully written!')
                 }
             })
-
-
             console.log(user)
             console.log("User added successfully")        
         } catch (err) {
