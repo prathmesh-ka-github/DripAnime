@@ -83,8 +83,8 @@
 }
 .shop-btn button{
     all: unset;
-    padding: 15px 40px;
-    font-size: 30px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
     font-weight: 300;
     color: white;
     border-radius: 10px;
@@ -125,7 +125,7 @@
 }
 
 .product-main-header {
-    font-size: 60px;
+    font-size: 3rem;
     cursor:default;
     position: relative;
 }
@@ -229,7 +229,7 @@
     }
     .shop-btn button{
         padding: 10px 20px;
-        font-size: 20px;
+        font-size: 2rem;
     }
     .photo {
         margin: 0;

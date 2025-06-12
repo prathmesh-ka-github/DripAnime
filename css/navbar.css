@@ -16,7 +16,7 @@
 .navbar-container {
     display: flex;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #F0F0F0;
     justify-content: space-between;
     position: -webkit-sticky;
@@ -31,13 +31,14 @@
     cursor: pointer;
 }
 .logo-pic {
-    width: 30px;
+    width: 40px;
 }
 .links-container-wrap{
     width: 100%;
     display: flex;
     justify-content: center;
     position: absolute;
+    top: 0px;
 }
 
 .links-container {
@@ -47,7 +48,7 @@
     width: 40%;
     justify-content: center;
     position: absolute;
-    height: 50px;
+    height: 60px;
     z-index: 0;
 }
 .links-container a{
@@ -68,7 +69,7 @@
 .rightnav {
     display: flex;
     align-items: center;
-    width: 12%;
+    width: 13%;
     justify-content: space-around;
     margin-right: 20px;
 }
@@ -104,9 +105,8 @@
     transition: all 900ms;
     max-height: 0;
     margin-bottom: 20px;
-    padding-top: 10px !important;
     position: sticky;
-    top: 80px;
+    top: 50px;
     background-color: white;
     z-index: 20;
     display: none;
@@ -121,6 +121,9 @@
 }
 .ham {
     display: none;
+}
+.ham img{
+    width: 30px;
 }
 
 .more {

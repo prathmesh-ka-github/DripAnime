@@ -78,7 +78,7 @@ app.use(express.static(__dirname + '/'));
             res.sendFile( __dirname + '/hoodie.html')
         })
 
-    //! -------------------------- Fetching users -------------------------------------
+//! -------------------------- Fetching users -------------------------------------
     app.get('/users', async (req,res) => {
         try {
             let data = await User.find({}, {_id : true})
@@ -111,7 +111,7 @@ app.use(express.static(__dirname + '/'));
     })
 
 
-    // ! --------------------------Private Routes------------------------------------
+// ! --------------------------Private Routes------------------------------------
     app.get('/profile', (req, res)=> {
         try {
             res.status(200)
@@ -129,7 +129,7 @@ app.use(express.static(__dirname + '/'));
             if(result) {
                 user.token = "none"
                 console.log("User not found...Creating new user.")
-                addUser(user)
+                addUser(user)   
                 res.status(201)
                 res.redirect('/login')
             }
@@ -180,21 +180,10 @@ app.use(express.static(__dirname + '/'));
         next();
     })
 
-
-
-
-
 //! LISTEN
 app.listen(port,() => {
     console.log(`Listening to http://localhost:${port}/`)
 })
-
-
-
-
-
-
-
 
 //! === === Functions === === 
 
