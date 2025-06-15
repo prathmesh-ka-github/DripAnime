@@ -6,5 +6,6 @@
             "src" : "/(.*)",
             "dest" : "server.js"
         }
+        
     ]
 }
