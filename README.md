@@ -35,6 +35,7 @@ _~~(No link available as the backend is being developed.)~~_
 [URL available. Click here to visit.](https://dripanime.onrender.com)
 
 ## TODOs:
+1. Deploy on vercel because render.com is slow af.
 1. Add related products to the specific product page.
 1. Make an anime wise section just like apparel's section.
 1. Complete shopping cart page and wishlist(in profile) page.
