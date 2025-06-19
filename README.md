@@ -3,15 +3,15 @@
 
 ![Webapp preview img](image.png)
 
-Now this project's Backend and Database is being hosted on a third-party website hosting service "**Render.com**"  
+Now this project's Backend and Database is being hosted on a third-party website hosting service "**Vercel.app**"  
 
->**Render.com is a unified cloud to build and run all your apps and websites with free TLS certificates, global CDN, private networks and auto deploys from Git.**
+>**Vercel provides the developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.**
 </br>  
 
 ### To initialize and deploy the webapp use -
 
 ```
-npm build server
+npm build
 npm run server
 ```
 then the app will deploy on localhost with the port specified. You will get the feedback in your terminal.
@@ -32,10 +32,10 @@ then the app will deploy on localhost with the port specified. You will get the 
 ![MEN Stack](menstackcropped1.png)
 
 _~~(No link available as the backend is being developed.)~~_  
-[URL available. Click here to visit.](https://dripanime.onrender.com)
+[URL available. Click here to visit.](https://dripanime.vercel.app)
 
 ## TODOs:
-1. Deploy on vercel because render.com is slow af.
+1. ~~Deploy on vercel because render.com is slow af.~~
 1. Add related products to the specific product page.
 1. Make an anime wise section just like apparel's section.
 1. Complete shopping cart page and wishlist(in profile) page.
