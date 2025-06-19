@@ -15,7 +15,8 @@ const Tshirts = require("./tshirtsModal")
 
 app.use(express.json())
 app.use(express.urlencoded({extended : false}));
-app.use(express.static(__dirname + '/'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //! ALL GET ENDPOINTS
