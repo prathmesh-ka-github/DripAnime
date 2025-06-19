@@ -3,7 +3,9 @@
 
 ![Webapp preview img](image.png)
 
-Now this project's Backend and Database is being hosted on a third-party website hosting service "**Vercel.app**"  
+Now this project's Backend and Database is being hosted on a third-party website hosting service "**Vercel.app**" 
+
+MongoDB integrated with Vercel.app
 
 >**Vercel provides the developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.**
 </br>  
@@ -36,6 +38,7 @@ _~~(No link available as the backend is being developed.)~~_
 
 ## TODOs:
 1. ~~Deploy on vercel because render.com is slow af.~~
+1. ~~Login and signup functionality errors due to deployment partner change.~~
 1. Add related products to the specific product page.
 1. Make an anime wise section just like apparel's section.
 1. Complete shopping cart page and wishlist(in profile) page.
