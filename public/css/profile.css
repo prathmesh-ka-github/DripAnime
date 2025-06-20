@@ -16,11 +16,32 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
+}
+.profile-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-
-.profile-photo img {
+.pfp {
     width: 300px;
+    transition: filter 300ms;
+}
+.profile-photo:hover {
+    cursor: pointer;
+}
+.profile-photo:hover .edit-icon {
+    opacity: 1;
+}
+.profile-photo:hover .pfp {
+    filter: brightness(0.8);
+}
+.edit-icon {
+    opacity: 0;
+    position: absolute;
+    width: 60px;
+    transition: opacity 300ms;
 }
 
 .profile-data {
@@ -29,4 +50,113 @@
     line-height: 2;
     display: flex;
     flex-direction: column;
+}
+.profile-buttons {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.profile-button-edit {
+    all: unset;
+    margin-right: 10px;
+    background-color: #0096C7;
+}
+.profile-button-edit:hover {
+    background-color: hsl(195, 100%, 35%);
+
+}
+.profile-button-logout:hover {
+    background-color: rgb(230, 30, 30);
+}
+.profile-button-logout {
+    all: unset;
+    background-color: rgb(255, 30, 30);
+}
+.profile-buttons button{
+    transition: background-color 300ms;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+.boldtxt {
+    font-weight: 600;
+}
+
+.edit-popup {
+    width: 100%;
+    min-height: 80vh;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 50px 0px;
+}
+.edit-heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.edit-desc {
+    margin: 20px 0px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.edit-row {
+    padding: 2px 0px;
+    display: flex;
+    justify-content: center;
+}
+.edit-btns {
+    padding: 10px 0px;
+    margin-top: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.edit-btns button {
+    all: unset;
+    font-size: 20px;
+    background-color: #0096C7;
+    color: white;
+    transition: background-color 300ms;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.edit-btns button:nth-child(1) {
+    border: 1px solid rgb(255, 30, 30);
+    color: rgb(255, 30, 30);
+    background-color: transparent;
+}
+.edit-desc input {
+    all: unset;
+    background-color: #e8e8e8;
+    margin: 5px;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width:900px){
+    .profile-wrapper {
+        height: 100%;
+        margin-bottom: 50px;
+    }
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-heading {
+        font-size: 20px;
+    }
+    .profile-data {
+        font-size: 15px;
+    }
+    .profile-buttons {
+        font-size: 15px;
+    }
 }

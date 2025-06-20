@@ -136,22 +136,54 @@
         </div>
     </div>
     
-    <div class="profile-wrapper">        
+    <div id="profile-page" class="profile-wrapper">        
         <div class="profile-heading"><h1>User Profile</h1></div>
         <div class="profile-container">
             <div class="profile-photo">
-                <img src="Assets/default-pfp.jpg" alt="">
+                <img class="pfp" src="Assets/default-pfp.jpg" alt="profile-photo">
+                <img class="edit-icon" src="Assets/edit-icon.svg" alt="">
             </div>
             <div class="profile-data">
-                <div>Name - <span id="name"></span></div> 
-                <div>Email ID - <span id="email"></span></div> 
-                <div>Phone number - <span id="phone"></span></div> 
-                <div>Address - <span id="address"></span></div> 
-                <div class="buttons">
-                    <button onclick="logout()">Logout</button>
-                    <button>Edit</button>
+                <div><span class="boldtxt">Name - </span><span id="name"></span></div> 
+                <div><span class="boldtxt">Email ID - </span><span id="email"></span></div> 
+                <div><span class="boldtxt">Phone number - </span><span id="phone"></span></div> 
+                <div><span class="boldtxt">Address - </span><span id="address"></span></div> 
+                <div class="profile-buttons">
+                    <button onclick="showedit()" class="profile-button-edit">Edit</button>
+                    <button class="profile-button-logout" onclick="logout()">Logout</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="edit-page" class="edit-popup">
+        <div class="edit-heading">Edit Profile</div>
+        <div class="edit-desc">
+            <form action="">
+                <div class="edit-row">
+                    <input placeholder="Name" name="name" type="text" id="ed-name" >
+                </div>
+                <div class="edit-row">
+                    <input placeholder="Email" name="email" type="email" id="ed-email" >
+                </div>
+                <div class="edit-row">
+                    <input placeholder="Phone number" name="phone" type="text" id="ed-phone" >
+                </div>
+                <div class="edit-row">
+                    <input placeholder="Address" name="address" type="text" id="ed-address" >
+                </div>
+                <div class="edit-row">
+                    <input placeholder="Password" name="pass" type="text" id="ed-pass" >
+                </div>
+                <div class="edit-row">
+                    <input placeholder="New Password" name="newpass" type="text" id="ed-new-pass" >
+                </div>
+                <div class="edit-row">
+                    <div class="edit-btns">
+                        <button onclick="showprofile()">Cancle</button>
+                        <button>Save</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     

@@ -245,6 +245,7 @@
     .product-main-container {
         flex-direction: column-reverse;
         height: auto;
+        padding: 50px 0px;
     }
     .product-photo-img {
         width: 200px;
