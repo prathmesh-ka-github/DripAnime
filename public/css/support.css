@@ -1,7 +1,116 @@
 .support-main-container {
-    height: 50vh;
+    min-height: 50vh;
+}
+
+.contactus-heading-wrapper {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactus-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: #848484;
+}
+.contactus-form {
     display: flex;
     justify-content: center;
+    margin-top: 70px;
+    padding: 20px 30px;
+    background-color: #F0F0F0;
+    border-radius: 20px;
     align-items: center;
+    width: max-content;
+}
+.contactus-form form {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 600px;
+    font-size: 15px;
+}
+.contactus-form form input,textarea,button {
+    all: unset;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 100%;
+}
+.contactus-form form button {
+    background-color: #0096C7;
+    border-radius: 20px;
+    width: max-content;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px 0px 0px 0px;
+}
+.contactus-form img{
+    width: 400px;
+    margin-left: 50px;
+    border-radius: 20px;
+}
+/* --------------------News letter------------ */
+.newsletter-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 500px;
+}
+
+.newsletter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 100px 0px;
+}
+
+.newsletter-container img{
+    width: 300px;
+}
+
+.newsletter-heading {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.newsletter-subheading {
+    font-size: 15px;
+    font-weight: 300;
+    color: #848484;
+    margin: 5px 0px;
+}
+.newsletter-form {
+    margin: 20px 0px;
+    width: 80%;
+}
+.newsletter-form form {
+    display: flex;
+}
+.newsletter-input {
+    all: unset;
+    background-color: #F0F0F0;
+    border: 1px #d8d8d8 solid;
+    border-width: 1px 0px 1px 1px;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+.newsletter-btn {
+    all: unset;
+    background-color: #0096C7;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
 }
