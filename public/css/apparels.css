@@ -56,7 +56,7 @@
     align-items: center;
 }
 .rightside {
-    padding-top: 400px;
+    margin-top: 400px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -64,7 +64,7 @@
 }
 
 .product-container{
-    margin: 100px 0px;
+    margin: 150px 0px;
     position: relative;
 }
 .product-name{

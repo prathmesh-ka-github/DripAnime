@@ -115,7 +115,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 50px 0px;
+    padding: 100px 0px;
 }
 
 .product-main-description{
@@ -163,7 +163,7 @@
     position: fixed;
     bottom: 50px;
     right: 20px;
-    font-size: 30px;
+    font-size: 25px;
     padding: 15px;
     background-color: #0096C7;
     color: white;
