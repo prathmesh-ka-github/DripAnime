@@ -104,9 +104,9 @@
     cursor: default;
     display: flex;
     align-items: center;
-    padding: 0px 10px;
+    margin: 0px 30px;
     height: 70%;
-    margin-top: 3px;
+    padding: 0px 10px;
 }
 
 .rightlink {
