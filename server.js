@@ -11,6 +11,7 @@ const mongoose = require("mongoose")
 const { error } = require("console")
 mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mongodb.net/DripanimeDB")
 const User = require("./userModal")
+const Newsletter = require("./newsletterModal")
 const Tshirts = require("./tshirtsModal")
 
 app.use(express.json())
@@ -181,6 +182,28 @@ app.use(express.static(path.join(__dirname, 'public')));
         next();
     })
 
+    app.post('/newsletter', async (req,res,next) => {
+        const email = req.body.email
+        console.log(email)
+        if (await searchNewsletterEmail(email)) {
+            res.status(400).json({
+                "err":"ERR - User already signed up for newsletter",
+                "code":400
+            })
+        }
+        else{
+            try {
+                await Newsletter.create({email})
+                res.status(201).json({
+                    'message':'User signed up for newsletter!',
+                    'code': 201
+                })
+            } catch (err) {
+                console.error(err)
+            }
+        }
+    })
+
 //! LISTEN
 app.listen(port,() => {
     console.log(`Listening to http://localhost:${port}/`)
@@ -221,6 +244,19 @@ async function searchUser(inputuser) {
             return 0
         }
         else if (await User.findOne({email : inputuser.email}) !== null){
+            return 1
+        }
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+async function searchNewsletterEmail(email) {
+    try {
+        if (await Newsletter.findOne({email : email}) == null) {
+            return 0
+        }
+        else if (await Newsletter.findOne({email : email}) !== null){
             return 1
         }
     } catch (err) {

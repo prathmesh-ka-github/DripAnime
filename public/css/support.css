@@ -1,6 +1,3 @@
-.support-main-container {
-    min-height: 50vh;
-}
 
 .contactus-heading-wrapper {
     width: 100%;
@@ -74,9 +71,15 @@
     padding: 100px 0px;
 }
 
-.newsletter-container img{
+.paperplane{
     width: 300px;
+    transform: translateX(-5px);
+    transition: transform ease 400ms;
 }
+.newsletter-container:hover .paperplane{
+    transform: translateX(10px);
+}
+
 
 .newsletter-heading {
     font-size: 20px;
@@ -89,8 +92,21 @@
     color: #848484;
     margin: 5px 0px;
 }
+
+#errordisplay {
+    padding: 5px;
+    opacity: 0;
+    color: red;
+    transition: opacity ease 500ms;
+}
+#greentick {
+    width: 80px;
+    display: none;
+}
+
 .newsletter-form {
-    margin: 20px 0px;
+    display: block;
+    margin: 10px 0px;
     width: 80%;
 }
 .newsletter-form form {
