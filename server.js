@@ -13,6 +13,7 @@ mongoose.connect("mongodb+srv://prathmesh:pratham02@dripanimecluster.jayx0yg.mon
 const User = require("./userModal")
 const Newsletter = require("./newsletterModal")
 const Tshirts = require("./tshirtsModal")
+const blogViews = require("./blogviewsModal")
 
 app.use(express.json())
 app.use(express.urlencoded({extended : false}));
@@ -203,6 +204,44 @@ app.use(express.static(path.join(__dirname, 'public')));
             }
         }
     })
+
+
+    // ? BLOG RELATED ENDPOINTS!
+
+    app.get('/blogviews', async (req, res, next) => {
+        let data = await blogViews.find({})
+        res.status(200).json(data)
+    })
+
+    app.post('/updateblogviews', async (req, res) => {
+        const updateblog = req.query
+        let check = await blogexists(updateblog.number)
+        if (check) {
+            let currentViews = (await blogViews.findOne({blog: check})).views
+            let newViews = currentViews + 1
+            await blogViews.updateOne({blog:check}, {$set : {views : newViews}})
+            res.status(200).json({
+                'success': 'blog found! and views updated!'
+            })
+        }else {
+            res.status(400).json({
+                "err":"ERR - Blog doesnt exist! Check blognumber and try again.",
+                "code":400
+            })
+        }
+    })
+
+    async function blogexists(blognumber) {
+        try {
+            if (await blogViews.findOne({blog: blognumber}) == null) {
+                return 0
+            } else {
+                return 1
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
 //! LISTEN
 app.listen(port,() => {
