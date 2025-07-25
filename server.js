@@ -215,14 +215,17 @@ app.use(express.static(path.join(__dirname, 'public')));
     })
 
     app.post('/updateblogviews', cors(), async (req, res) => {
-        const updateblog = req.query
-        let check = await blogexists(updateblog.number)
+        const blog = req.query
+        let check = await blogexists(blog.number)
         if (check) {
             let currentViews = (await blogViews.findOne({blog: check})).views
             let newViews = currentViews + 1
             await blogViews.updateOne({blog:check}, {$set : {views : newViews}})
             res.status(200).json({
-                'success': 'blog found! and views updated!'
+                'success': 'blog found! and views updated!',
+                'blog': blog.number,
+                'updated views': newViews,
+
             })
         }else {
             res.status(400).json({
