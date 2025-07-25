@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 var bcrypt = require("bcryptjs")
 var jwt = require('jsonwebtoken')
 
@@ -208,12 +209,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
     // ? BLOG RELATED ENDPOINTS!
 
-    app.get('/blogviews', async (req, res, next) => {
+    app.get('/blogviews',cors(), async (req, res, next) => {
         let data = await blogViews.find({})
         res.status(200).json(data)
     })
 
-    app.post('/updateblogviews', async (req, res) => {
+    app.post('/updateblogviews', cors(), async (req, res) => {
         const updateblog = req.query
         let check = await blogexists(updateblog.number)
         if (check) {
